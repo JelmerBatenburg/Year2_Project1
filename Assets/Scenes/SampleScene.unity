@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 654135041}
   - component: {fileID: 654135040}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Sample2M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,6 +374,7 @@ MonoBehaviour:
   cameraUpMovement: 4
   cameraUpRotation: 4
   camspeed: 25
+  camRotationSpeed: 2
 --- !u!4 &894147379
 Transform:
   m_ObjectHideFlags: 0
@@ -416,11 +417,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scannableArea:
-  - size: {x: 30.41, y: 0.48, z: 72.8}
+  - size: {x: 30, y: 0.5, z: 73}
     position: {x: 0, y: 0, z: 0}
   drawGizmos: 1
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
-  towerSize: 0
+  towerSize: 8
+  tiles: []
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &925096707
 Transform:
   m_ObjectHideFlags: 0
@@ -446,7 +451,7 @@ GameObject:
   - component: {fileID: 995298553}
   - component: {fileID: 995298552}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: GroundTestPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

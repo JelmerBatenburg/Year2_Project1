@@ -9,10 +9,17 @@ public class TowerGrid : MonoBehaviour {
     public Color gizmoColor;
     public int towerSize;
     public List<TowerTile> tiles;
+    public LayerMask groundMask;
 
-    public void Update()
+    public void Start()
     {
-        
+        for (int areaCount = 0; areaCount < scannableArea.Length; areaCount++)
+        {
+            int areaAmountCheckWidth = Mathf.RoundToInt(scannableArea[areaCount].size.x / towerSize);
+            int areaAmountCheckLength = Mathf.RoundToInt(scannableArea[areaCount].size.z / towerSize);
+            Debug.Log("WidthAmount = " + areaAmountCheckWidth + " / LengthAmount = " + areaAmountCheckLength);
+
+        }
     }
 
     public void OnDrawGizmos()

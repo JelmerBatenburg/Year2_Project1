@@ -12,13 +12,14 @@ public class CameraController : MonoBehaviour {
     public float cameraUpMovement;
     public float cameraUpRotation;
     public float camspeed;
+    public float camRotationSpeed;
 
     public void Update()
     {
         transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical")) * Time.deltaTime * camspeed);
         if (Input.GetButton("Fire3"))
         {
-            transform.Rotate(new Vector3(0, -Input.GetAxis("Mouse X"), 0));
+            transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * camRotationSpeed);
         }
 
         if(Input.GetAxisRaw("Mouse ScrollWheel") != 0)
