@@ -9,6 +9,6 @@ public class CameraViews : MonoBehaviour {
 
     public void Update()
     {
-        
+        towerGridCam.SetActive(towerGrid);
     }
 }

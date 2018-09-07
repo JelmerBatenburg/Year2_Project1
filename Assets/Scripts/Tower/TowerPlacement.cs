@@ -6,29 +6,64 @@ public class TowerPlacement : MonoBehaviour {
 
     public GameObject tower;
     public TowerGrid grid;
+    public bool active;
+    public bool found;
+    public int cost;
 
     public void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(ray, out hit))
+        if (active)
         {
-            List<float> distances = new List<float>();
-            for (int i = 0; i < grid.tiles.Count; i++)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(ray, out hit))
             {
-                distances.Add(Vector3.Distance(grid.tiles[i].location, hit.point));
-            }
-
-            for (int i = 0; i < distances.Count; i++)
-            {
-                if(distances[i] == Mathf.Min(distances.ToArray()))
+                List<float> distances = new List<float>();
+                for (int i = 0; i < grid.tiles.Count; i++)
                 {
-                    tower.transform.position = grid.tiles[i].location;
-                    break;
+                    if (!grid.tiles[i].taken)
+                    {
+                        distances.Add(Vector3.Distance(grid.tiles[i].location, hit.point));
+                    }
+                    else
+                    {
+                        distances.Add(999);
+                    }
+                }
+
+                for (int i = 0; i < distances.Count; i++)
+                {
+                    if (distances[i] == Mathf.Min(distances.ToArray()))
+                    {
+                        tower.transform.position = grid.tiles[i].location;
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (Input.GetButtonDown("Fire1") && found)
+                {
+                    active = false;
+                    tower = null;
+                    found = false;
+                    GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = false;
+                    for (int i = 0; i < distances.Count; i++)
+                    {
+                        if (distances[i] == Mathf.Min(distances.ToArray()))
+                        {
+                            grid.tiles[i].taken = true;
+                            break;
+                        }
+                    }
+                }
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    active = false;
+                    found = false;
+                    Destroy(tower);
+                    GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = false;
                 }
             }
-
-            
         }
     }
 }

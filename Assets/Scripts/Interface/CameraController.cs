@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour {
 
     public void Update()
     {
-        transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical")) * Time.deltaTime * camspeed);
+        transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * Time.deltaTime * (Input.GetButton("Sprint") ? camspeed * 2 : camspeed));
         if (Input.GetButton("Fire3"))
         {
             transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * camRotationSpeed);
