@@ -10,6 +10,10 @@ public class TowerGrid : MonoBehaviour {
     public int towerSize;
     public List<TowerTile> tiles;
     public LayerMask groundMask;
+    public GameObject tileShowPrefab;
+    public float tileShowGap;
+
+    
 
     public void Start()
     {
@@ -17,8 +21,24 @@ public class TowerGrid : MonoBehaviour {
         {
             int areaAmountCheckWidth = Mathf.RoundToInt(scannableArea[areaCount].size.x / towerSize);
             int areaAmountCheckLength = Mathf.RoundToInt(scannableArea[areaCount].size.z / towerSize);
-            Debug.Log("WidthAmount = " + areaAmountCheckWidth + " / LengthAmount = " + areaAmountCheckLength);
-
+            for (int currentLength = 0; currentLength < areaAmountCheckLength; currentLength++)
+            {
+                for (int currentWidth = 0; currentWidth < areaAmountCheckWidth; currentWidth++)
+                {
+                    Vector3 position = scannableArea[areaCount].position - new Vector3(areaAmountCheckWidth/2 * towerSize, 0, areaAmountCheckLength/2* towerSize) + new Vector3(towerSize/2,0,towerSize/2) + new Vector3(towerSize * currentWidth,0,towerSize * currentLength);
+                    if (Physics.OverlapBox(position,Vector3.one,Quaternion.identity,groundMask).Length > 0)
+                    {
+                        GameObject obj = Instantiate(tileShowPrefab, position, Quaternion.identity,transform);
+                        obj.transform.localScale = new Vector3(towerSize - tileShowGap, 0.05f, towerSize-tileShowGap);
+                        TowerTile tile = new TowerTile
+                        {
+                            taken = false,
+                            location = position
+                        };
+                        tiles.Add(tile);
+                    }
+                }
+            }
         }
     }
 
