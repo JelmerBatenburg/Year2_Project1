@@ -9,45 +9,44 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1210173264933876}
+  m_RootGameObject: {fileID: 1396795445366048}
   m_IsPrefabAsset: 1
---- !u!1 &1210173264933876
+--- !u!1 &1396795445366048
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4949936345693548}
-  - component: {fileID: 33846245462775084}
-  - component: {fileID: 23717574794944870}
-  - component: {fileID: 114180004835027606}
+  - component: {fileID: 4498244481311036}
+  - component: {fileID: 33138474924532856}
+  - component: {fileID: 23721593741590586}
   m_Layer: 11
-  m_Name: TowerPlaceholder
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4949936345693548
+--- !u!4 &4498244481311036
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1210173264933876}
-  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1396795445366048}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0.32141006, y: 0, z: -6.660249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!23 &23717574794944870
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23721593741590586
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1210173264933876}
+  m_GameObject: {fileID: 1396795445366048}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,7 +56,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3ff176fc9b694364c8d99db6d9860e0d, type: 3}
+  - {fileID: 2100000, guid: 924c59bd8ca5e734fb245226ce4be0a7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,25 +76,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33846245462775084
+--- !u!33 &33138474924532856
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1210173264933876}
-  m_Mesh: {fileID: 4300000, guid: 3ff176fc9b694364c8d99db6d9860e0d, type: 3}
---- !u!114 &114180004835027606
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1210173264933876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b467b43bebefb1478866841affbd4d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  damage: 0
-  radius: 0
-  placed: 0
+  m_GameObject: {fileID: 1396795445366048}
+  m_Mesh: {fileID: 4300000, guid: 924c59bd8ca5e734fb245226ce4be0a7, type: 3}

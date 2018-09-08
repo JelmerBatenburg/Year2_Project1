@@ -11,6 +11,14 @@ public class TowerCard : MonoBehaviour
     public Image spriteInput;
     public TowerScriptObject towerInput;
 
+    public void Awake()
+    {
+        if (nameInput) { nameInput.text = towerInput.name; }
+        if (descriptionInput) { descriptionInput.text = towerInput.description; }
+        if (costInput) { costInput.text = "Cost = " + towerInput.buildCost.ToString(); }
+        if (spriteInput) { spriteInput.sprite = towerInput.image; }
+    }
+
     public void OnClick()
     {
         GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = true;
@@ -21,7 +29,7 @@ public class TowerCard : MonoBehaviour
             Destroy(tower.tower);
         }
         tower.cost = towerInput.buildCost;
-        GameObject tempTower = Instantiate(towerInput.tower, Vector3.one * 30, towerInput.tower.transform.rotation);
+        GameObject tempTower = Instantiate(towerInput.tower, Vector3.one * 30, towerInput.tower.transform.rotation,tower.transform);
         tower.active = true;
         tower.tower = tempTower;
     }

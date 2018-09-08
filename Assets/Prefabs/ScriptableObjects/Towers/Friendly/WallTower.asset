@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: TestTower
+  m_Name: WallTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
-  towerName: TowerTemplate
+  towerName: Wall
   description: 
-  buildCost: 120
+  buildCost: 40
   image: {fileID: 0}
-  tower: {fileID: 1210173264933876, guid: 24a433996927ac146a854ca7d69ab245, type: 2}
+  tower: {fileID: 1672556469931002, guid: d7df44aa07c68224abc430ba1726d3c3, type: 2}

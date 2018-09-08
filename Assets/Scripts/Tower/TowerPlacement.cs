@@ -44,6 +44,7 @@ public class TowerPlacement : MonoBehaviour {
                 if (Input.GetButtonDown("Fire1") && found)
                 {
                     active = false;
+                    tower.GetComponent<BaseTower>().placed = true;
                     tower = null;
                     found = false;
                     GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = false;
