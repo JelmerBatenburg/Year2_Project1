@@ -43,10 +43,13 @@ public class TowerPlacement : MonoBehaviour {
 
                 if (Input.GetButtonDown("Fire1") && found)
                 {
+                    IngameCurrency currency = GameObject.FindWithTag("Manager").GetComponent<IngameCurrency>();
+                    currency.currency -= tower.GetComponent<BaseTower>().towerInfo.buildCost;
                     active = false;
                     tower.GetComponent<BaseTower>().placed = true;
                     tower = null;
                     found = false;
+                    currency.CurrencyChange();
                     GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = false;
                     for (int i = 0; i < distances.Count; i++)
                     {

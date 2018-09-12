@@ -4,38 +4,40 @@ using UnityEngine;
 
 public class HeavyCrossbowTower : BaseTower {
 
-    public Transform RotatingPart;
+    public CrossBowBolt bolt;
+    public float boltSpeed;
+    public Transform RotatingPart, rotatingPart2;
     public bool activeFire;
     public Transform reloadLocation;
-    public GameObject arrowPrefab;
+    public GameObject boltPrefab;
 
     public void Update()
     {
-        InfoPopUp();
-        GameObject[] targets = TargetDetect(RotatingPart.position+ Vector3.up * 1.5f);
-        if(targets.Length > 0)
+        if (placed)
         {
-            RotatingPart.LookAt(targets[0].transform.position);
-            if (!activeFire)
+            InfoPopUp();
+            GameObject enemy = TargetDetect(RotatingPart.position + Vector3.up * 1.5f, true);
+            if (enemy)
             {
-                StartCoroutine(Fire());
+                rotatingPart2.LookAt(new Vector3(enemy.transform.position.x, rotatingPart2.position.y, enemy.transform.position.z));
+                RotatingPart.LookAt(enemy.transform.position);
+                if (!activeFire)
+                {
+                    StartCoroutine(Fire());
+                }
             }
-            activeFire = true;
-        }
-        else
-        {
-            activeFire = false;
         }
     }
 
     public IEnumerator Fire()
     {
-        //fire
+        activeFire = true;
+        Destroy(bolt.gameObject, 5);
+        bolt.transform.parent = null;
+        bolt.speed = boltSpeed;
         yield return new WaitForSeconds(fireRate);
-        //load
-        if (activeFire)
-        {
-            StartCoroutine(Fire());
-        }
+        GameObject tempBolt = Instantiate(boltPrefab, reloadLocation.position, reloadLocation.rotation, reloadLocation);
+        bolt = tempBolt.GetComponent<CrossBowBolt>();
+        activeFire = false;
     }
 }

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4653788543642948}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4591689096591316}
-  m_Layer: 0
+  - component: {fileID: 114217852317029732}
+  m_Layer: 13
   m_Name: HeavyArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +52,7 @@ GameObject:
   - component: {fileID: 4164422829106458}
   - component: {fileID: 33579697233118238}
   - component: {fileID: 23533174141481898}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +70,7 @@ GameObject:
   - component: {fileID: 33797275589301048}
   - component: {fileID: 23663379555064602}
   - component: {fileID: 136947323233224288}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361987206189688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.39, z: 2.1334}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4093476697313660}
@@ -215,6 +216,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804600123073624}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114217852317029732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361987206189688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154651b8423654e46a61e965796636a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  launched: 0
 --- !u!136 &136947323233224288
 CapsuleCollider:
   m_ObjectHideFlags: 1

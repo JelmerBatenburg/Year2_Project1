@@ -21,17 +21,20 @@ public class TowerCard : MonoBehaviour
 
     public void OnClick()
     {
-        GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = true;
-        TowerPlacement tower = GameObject.FindWithTag("TowerManager").GetComponent<TowerPlacement>();
-        if (tower.active)
+        if(GameObject.FindWithTag("Manager").GetComponent<IngameCurrency>().currency >= towerInput.buildCost)
         {
-            tower.found = false;
-            Destroy(tower.tower);
+            GameObject.FindWithTag("CamHolder").GetComponent<CameraViews>().towerGrid = true;
+            TowerPlacement tower = GameObject.FindWithTag("TowerManager").GetComponent<TowerPlacement>();
+            if (tower.active)
+            {
+                tower.found = false;
+                Destroy(tower.tower);
+            }
+            tower.cost = towerInput.buildCost;
+            GameObject tempTower = Instantiate(towerInput.tower, Vector3.one * 30, towerInput.tower.transform.rotation, tower.transform);
+            tower.active = true;
+            tower.tower = tempTower;
         }
-        tower.cost = towerInput.buildCost;
-        GameObject tempTower = Instantiate(towerInput.tower, Vector3.one * 30, towerInput.tower.transform.rotation,tower.transform);
-        tower.active = true;
-        tower.tower = tempTower;
     }
 }
 
