@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: MeteorRain
+  m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
+  towerName: Meteor Rain
+  description: 
+  buildCost: 1300
+  image: {fileID: 0}
+  tower: {fileID: 1740584672517432, guid: ace0c81a91b406f41abec889ad8c2ce2, type: 2}

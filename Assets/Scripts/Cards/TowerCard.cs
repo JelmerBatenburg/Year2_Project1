@@ -13,7 +13,7 @@ public class TowerCard : MonoBehaviour
 
     public void Awake()
     {
-        if (nameInput) { nameInput.text = towerInput.name; }
+        if (nameInput) { nameInput.text = towerInput.towerName; }
         if (descriptionInput) { descriptionInput.text = towerInput.description; }
         if (costInput) { costInput.text = "Cost = " + towerInput.buildCost.ToString(); }
         if (spriteInput) { spriteInput.sprite = towerInput.image; }
