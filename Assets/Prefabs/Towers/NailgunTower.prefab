@@ -1432,7 +1432,7 @@ MonoBehaviour:
     m_Bits: 4096
   raycastmask:
     serializedVersion: 2
-    m_Bits: 6967
+    m_Bits: 23351
   rotatingPart: {fileID: 4544594361895370}
   rotatingPart2: {fileID: 4141241529207294}
   fireLocation: {fileID: 4665111268706750}

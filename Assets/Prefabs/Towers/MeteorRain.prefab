@@ -285,7 +285,7 @@ MonoBehaviour:
     m_Bits: 4096
   raycastmask:
     serializedVersion: 2
-    m_Bits: 6967
+    m_Bits: 23351
   fireAmount: 200
   pinShot: {fileID: 1362172993120262, guid: 7f62369f2a364b847be7779197af7c34, type: 2}
   laser: {fileID: 1868195608819892, guid: 4cb850dd872b9994abe78960faed2c5a, type: 2}

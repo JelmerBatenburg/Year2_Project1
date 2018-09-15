@@ -12,8 +12,7 @@ public class TowerGrid : MonoBehaviour {
     public LayerMask groundMask;
     public GameObject tileShowPrefab;
     public float tileShowGap;
-
-    
+    public LayerMask obstacles;
 
     public void Start()
     {
@@ -28,14 +27,17 @@ public class TowerGrid : MonoBehaviour {
                     Vector3 position = scannableArea[areaCount].position - new Vector3(areaAmountCheckWidth/2 * towerSize, 0, areaAmountCheckLength/2* towerSize) + new Vector3(towerSize/2,0,towerSize/2) + new Vector3(towerSize * currentWidth,0,towerSize * currentLength);
                     if (Physics.OverlapBox(position,Vector3.one,Quaternion.identity,groundMask).Length > 0)
                     {
-                        GameObject obj = Instantiate(tileShowPrefab, position, Quaternion.identity,transform);
-                        obj.transform.localScale = new Vector3(towerSize - tileShowGap, 0.05f, towerSize-tileShowGap);
-                        TowerTile tile = new TowerTile
+                        if (!Physics.CheckBox(position, Vector3.one, Quaternion.identity, obstacles))
                         {
-                            taken = false,
-                            location = position
-                        };
-                        tiles.Add(tile);
+                            GameObject obj = Instantiate(tileShowPrefab, position, Quaternion.identity, transform);
+                            obj.transform.localScale = new Vector3(towerSize - tileShowGap, 0.05f, towerSize - tileShowGap);
+                            TowerTile tile = new TowerTile
+                            {
+                                taken = false,
+                                location = position
+                            };
+                            tiles.Add(tile);
+                        }
                     }
                 }
             }

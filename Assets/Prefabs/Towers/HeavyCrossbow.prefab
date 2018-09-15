@@ -575,7 +575,7 @@ MonoBehaviour:
     m_Bits: 4096
   raycastmask:
     serializedVersion: 2
-    m_Bits: 6967
+    m_Bits: 23351
   bolt: {fileID: 114331497905083956}
   boltSpeed: 80
   RotatingPart: {fileID: 4334916882102676}
