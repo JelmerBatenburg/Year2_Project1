@@ -208,7 +208,7 @@ public class AStarGrid : MonoBehaviour {
         nodeList = new Node[areaAmountCheckLength + 1, areaAmountCheckWidth + 1];
         for (int i = 0; i < scanLocations.Count; i++)
         {
-            bool wall = Physics.CheckBox(scanLocations[i].worldLocation, Vector3.one * tileSize, Quaternion.identity, obstacleMask)? false : true;
+            bool wall = Physics.CheckBox(scanLocations[i].worldLocation, Vector3.one * tileSize/2, Quaternion.identity, obstacleMask)? false : true;
             nodeList[scanLocations[i].gridY, scanLocations[i].gridX] = new Node(wall, scanLocations[i].worldLocation, scanLocations[i].gridX, scanLocations[i].gridY);
         }
     }

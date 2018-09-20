@@ -23,6 +23,11 @@ public class PathFinding : MonoBehaviour {
     {
         Node StartNode = grid.NodeFromWorldPosition(a_StartPos);
         Node TargetNode = grid.NodeFromWorldPosition(a_TargetPos);
+        while (!TargetNode.walkable)
+        {
+            Vector3 dir = (TargetNode.position - StartNode.position).normalized;
+            TargetNode = grid.nodeList[TargetNode.gridY - Mathf.RoundToInt(dir.z), TargetNode.gridX - Mathf.RoundToInt(dir.x)];
+        }
 
         List<Node> OpenList = new List<Node>();
         HashSet<Node> ClosedList = new HashSet<Node>();
@@ -69,8 +74,6 @@ public class PathFinding : MonoBehaviour {
                 }
             }
         }
-
-        Debug.Log("Null");
         return null;
     }
 

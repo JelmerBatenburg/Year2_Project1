@@ -14,6 +14,7 @@ public class BaseUnit : MonoBehaviour {
     public bool ranged;
     public GameObject projectile;
     public bool attacking;
+    private Transform enemyBase;
 
     public void FirstCheck()
     {
@@ -23,16 +24,11 @@ public class BaseUnit : MonoBehaviour {
             if (bases[i].GetComponent<Base>().friendly && !friendly || !bases[i].GetComponent<Base>().friendly && friendly)
             {
                 currentTarget = bases[i].GetComponent<Base>().entrance;
-                StartCoroutine(FirstCheckTimer());
+                enemyBase = bases[i].GetComponent<Base>().entrance;
+                StartCoroutine(RefreshPath());
                 break;
             }
         }
-    }
-
-    public IEnumerator FirstCheckTimer()
-    {
-        yield return new WaitForEndOfFrame();
-        RefreshPath(currentTarget.position);
     }
 
     public void Awake()
@@ -42,20 +38,33 @@ public class BaseUnit : MonoBehaviour {
 
     public void Update()
     {
-        Move();
-        TargetDetection();
-        AttackCheck();
+        if (currentTarget)
+        {
+            if (Vector3.Distance(transform.position, currentTarget.position) >= attackRange / 2)
+            {
+                currentTarget = TargetDetection();
+                Move();
+            }
+            AttackCheck();
+        }
+        else
+        {
+            currentTarget = TargetDetection();
+        }
     }
 
     public void AttackCheck()
     {
-        if(currentTarget.GetComponent<BaseUnit>() || currentTarget.GetComponent<BaseTower>())
+        if (currentTarget)
         {
-            if (Vector3.Distance(transform.position, currentTarget.position) <= attackRange)
+            if (currentTarget.GetComponent<BaseUnit>() || currentTarget.GetComponent<BaseTower>())
             {
-                if (!attacking)
+                if (Vector3.Distance(transform.position, currentTarget.gameObject.GetComponent<Collider>().ClosestPoint(transform.position)) <= attackRange)
                 {
-                    StartCoroutine(Attack());
+                    if (!attacking)
+                    {
+                        StartCoroutine(Attack());
+                    }
                 }
             }
         }
@@ -66,7 +75,7 @@ public class BaseUnit : MonoBehaviour {
         attacking = true;
         if (ranged)
         {
-            Debug.Log("He's a special one");
+
         }
         else
         {
@@ -89,7 +98,7 @@ public class BaseUnit : MonoBehaviour {
 
     public void Move()
     {
-        if (path != null && path.Count > 0)
+        if (path != null && path.Count > 1)
         {
             transform.position = Vector3.MoveTowards(transform.position, path[0].position, movementSpeed * Time.deltaTime);
             Vector3 targetPosition = path[0].position - transform.position;
@@ -101,11 +110,37 @@ public class BaseUnit : MonoBehaviour {
                 path.RemoveAt(0);
             }
         }
+        else
+        {
+            if(path != null && path.Count > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, path[0].position, movementSpeed * Time.deltaTime);
+                Vector3 targetPosition = path[0].position - transform.position;
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetPosition, rotationSpeed * Time.deltaTime, 0.0f);
+                transform.rotation = Quaternion.LookRotation(newDir);
+
+                if (Vector3.Distance(path[0].position, transform.position) < walkDistance/4)
+                {
+                    path.RemoveAt(0);
+                }
+            }
+        }
     }
 
-    public void RefreshPath(Vector3 position)
+    public IEnumerator RefreshPath()
     {
-        path = GameObject.FindWithTag("Manager").GetComponent<PathFinding>().FindPath(transform.position, position);
+        yield return new WaitForEndOfFrame();
+        if (currentTarget)
+        {
+            if (currentTarget.gameObject.GetComponent<Collider>())
+            {
+                path = GameObject.FindWithTag("Manager").GetComponent<PathFinding>().FindPath(transform.position, currentTarget.gameObject.GetComponent<Collider>().ClosestPoint(transform.position));
+            }
+            else
+            {
+                path = GameObject.FindWithTag("Manager").GetComponent<PathFinding>().FindPath(transform.position, currentTarget.position);
+            }
+        }
     }
 
     public void HealthCheck()
@@ -133,11 +168,25 @@ public class BaseUnit : MonoBehaviour {
             {
                 if(distance == distances[i])
                 {
-                    int index
+                    StartCoroutine(RefreshPath());
                     return targetsInRange[i].transform;
                 }
             }
         }
-        return null;
+        if(currentTarget != enemyBase)
+        {
+            StartCoroutine(RefreshPath());
+            return enemyBase;
+        }
+        return enemyBase;
+    }
+
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, targetDetectionRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+
     }
 }

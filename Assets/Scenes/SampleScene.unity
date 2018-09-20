@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 360361457}
   - component: {fileID: 360361456}
   m_Layer: 12
-  m_Name: Cube (3)
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,14 +794,14 @@ MonoBehaviour:
   pathfinding: {fileID: 0}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 2048
   friendly: 0
   movementSpeed: 10
   rotationSpeed: 1
-  walkDistance: 5
+  walkDistance: 3
   currentTarget: {fileID: 1190110924}
   health: 100
-  attackRange: 3
+  attackRange: 4
   damage: 20
   targetDetectionRange: 40
   attackSpeed: 2
@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 468441073}
   - component: {fileID: 468441072}
   m_Layer: 11
-  m_Name: Cube
+  m_Name: friendly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -982,10 +982,10 @@ MonoBehaviour:
   friendly: 1
   movementSpeed: 10
   rotationSpeed: 1
-  walkDistance: 5
+  walkDistance: 3
   currentTarget: {fileID: 1190110924}
   health: 100
-  attackRange: 3
+  attackRange: 4
   damage: 20
   targetDetectionRange: 40
   attackSpeed: 2
@@ -1427,7 +1427,7 @@ GameObject:
   - component: {fileID: 821192064}
   - component: {fileID: 821192063}
   m_Layer: 12
-  m_Name: Cube (5)
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1447,14 +1447,14 @@ MonoBehaviour:
   pathfinding: {fileID: 0}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 2048
   friendly: 0
   movementSpeed: 10
   rotationSpeed: 1
-  walkDistance: 5
+  walkDistance: 3
   currentTarget: {fileID: 0}
   health: 100
-  attackRange: 3
+  attackRange: 4
   damage: 20
   targetDetectionRange: 40
   attackSpeed: 2
@@ -1541,7 +1541,7 @@ GameObject:
   - component: {fileID: 824893081}
   - component: {fileID: 824893080}
   m_Layer: 11
-  m_Name: Cube (2)
+  m_Name: friendly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1565,10 +1565,10 @@ MonoBehaviour:
   friendly: 1
   movementSpeed: 10
   rotationSpeed: 1
-  walkDistance: 5
+  walkDistance: 3
   currentTarget: {fileID: 0}
   health: 100
-  attackRange: 3
+  attackRange: 4
   damage: 20
   targetDetectionRange: 40
   attackSpeed: 2
@@ -3730,7 +3730,7 @@ GameObject:
   - component: {fileID: 1628256238}
   - component: {fileID: 1628256237}
   m_Layer: 11
-  m_Name: Cube (1)
+  m_Name: friendly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3754,10 +3754,10 @@ MonoBehaviour:
   friendly: 1
   movementSpeed: 10
   rotationSpeed: 1
-  walkDistance: 5
+  walkDistance: 3
   currentTarget: {fileID: 0}
   health: 100
-  attackRange: 3
+  attackRange: 4
   damage: 20
   targetDetectionRange: 40
   attackSpeed: 2
@@ -4335,7 +4335,7 @@ GameObject:
   - component: {fileID: 1841313229}
   - component: {fileID: 1841313228}
   m_Layer: 12
-  m_Name: Cube (4)
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4355,14 +4355,14 @@ MonoBehaviour:
   pathfinding: {fileID: 0}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 2048
   friendly: 0
   movementSpeed: 10
   rotationSpeed: 1
-  walkDistance: 5
+  walkDistance: 3
   currentTarget: {fileID: 0}
   health: 100
-  attackRange: 3
+  attackRange: 4
   damage: 20
   targetDetectionRange: 40
   attackSpeed: 2
