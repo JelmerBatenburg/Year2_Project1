@@ -8,31 +8,31 @@ public class AStarGrid : MonoBehaviour {
     public AstarScanArea[] areas;
     [HideInInspector]
     public List<AstarScanInfo> scanLocations;
-    public LayerMask groundMask;
-    public LayerMask groundObstacles;
+    public LayerMask groundMask, groundObstacles;
     public AStarGizmosList drawGizmos;
     public LayerMask obstacleMask;
     public Node[,] nodeList;
+    private int areaAmountCheckWidth, areaAmountCheckLength;
 
     public void Start()
     {
         for (int areaCount = 0; areaCount < areas.Length; areaCount++)
         {
-            int areaAmountCheckWidth = Mathf.RoundToInt(areas[areaCount].scale.x / tileSize);
-            int areaAmountCheckLength = Mathf.RoundToInt(areas[areaCount].scale.z / tileSize);
+            areaAmountCheckWidth = Mathf.RoundToInt(areas[areaCount].scale.x / tileSize);
+            areaAmountCheckLength = Mathf.RoundToInt(areas[areaCount].scale.z / tileSize);
             for (int currentLength = 0; currentLength < areaAmountCheckLength; currentLength++)
             {
                 for (int currentWidth = 0; currentWidth < areaAmountCheckWidth; currentWidth++)
                 {
-                    Vector3 position = areas[areaCount].position - new Vector3(areaAmountCheckWidth / 2 * tileSize, 0, areaAmountCheckLength / 2 * tileSize) + new Vector3(tileSize / 2, 0, tileSize / 2) + new Vector3(tileSize * currentWidth, 0, tileSize * currentLength);
+                    Vector3 position = areas[areaCount].position - new Vector3(areaAmountCheckWidth / 2 * tileSize, 0, areaAmountCheckLength / 2 * tileSize) + new Vector3(tileSize * currentWidth, 0, tileSize * currentLength);
                     if (Physics.OverlapBox(position, Vector3.one, Quaternion.identity, groundMask).Length > 0)
                     {
-                        if (!Physics.CheckBox(position,Vector3.one * tileSize, Quaternion.identity, groundObstacles))
+                        if (!Physics.CheckBox(position, Vector3.one * tileSize, Quaternion.identity, groundObstacles))
                         {
                             scanLocations.Add(new AstarScanInfo { worldLocation = position, gridX = currentWidth, gridY = currentLength });
                         }
                     }
-                    else if ( currentWidth == 0 && currentLength == 00)
+                    else if (currentWidth == 0 && currentLength == 0)
                     {
                         scanLocations.Add(new AstarScanInfo { worldLocation = position, gridX = currentWidth, gridY = currentLength });
                     }
@@ -76,9 +76,9 @@ public class AStarGrid : MonoBehaviour {
         //Right
         xCheck = a_Node.gridX + 1;
         yCheck = a_Node.gridY;
-        if(xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+        if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
         {
-            if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+            if (yCheck >= 0 && yCheck < areaAmountCheckLength)
             {
                 if(nodeList[yCheck,xCheck] != null)
                 {
@@ -91,9 +91,9 @@ public class AStarGrid : MonoBehaviour {
         //Left
         xCheck = a_Node.gridX - 1;
         yCheck = a_Node.gridY;
-        if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+        if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
         {
-            if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+            if (yCheck >= 0 && yCheck < areaAmountCheckLength)
             {
                 if (nodeList[yCheck, xCheck] != null)
                 {
@@ -106,9 +106,9 @@ public class AStarGrid : MonoBehaviour {
         //Up
         xCheck = a_Node.gridX;
         yCheck = a_Node.gridY + 1;
-        if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+        if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
         {
-            if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+            if (yCheck >= 0 && yCheck < areaAmountCheckLength)
             {
                 if (nodeList[yCheck, xCheck] != null)
                 {
@@ -121,9 +121,9 @@ public class AStarGrid : MonoBehaviour {
         //Down
         xCheck = a_Node.gridX;
         yCheck = a_Node.gridY - 1;
-        if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+        if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
         {
-            if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+            if (yCheck >= 0 && yCheck < areaAmountCheckLength)
             {
                 if (nodeList[yCheck, xCheck] != null)
                 {
@@ -138,9 +138,9 @@ public class AStarGrid : MonoBehaviour {
         {
             xCheck = a_Node.gridX + 1;
             yCheck = a_Node.gridY + 1;
-            if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+            if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
             {
-                if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+                if (yCheck >= 0 && yCheck < areaAmountCheckLength)
                 {
                     if (nodeList[yCheck, xCheck] != null)
                     {
@@ -155,9 +155,9 @@ public class AStarGrid : MonoBehaviour {
         {
             xCheck = a_Node.gridX - 1;
             yCheck = a_Node.gridY + 1;
-            if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+            if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
             {
-                if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+                if (yCheck >= 0 && yCheck < areaAmountCheckLength)
                 {
                     if (nodeList[yCheck, xCheck] != null)
                     {
@@ -172,9 +172,9 @@ public class AStarGrid : MonoBehaviour {
         {
             xCheck = a_Node.gridX + 1;
             yCheck = a_Node.gridY - 1;
-            if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+            if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
             {
-                if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+                if (yCheck >= 0 && yCheck < areaAmountCheckLength)
                 {
                     if (nodeList[yCheck, xCheck] != null)
                     {
@@ -189,9 +189,9 @@ public class AStarGrid : MonoBehaviour {
         {
             xCheck = a_Node.gridX - 1;
             yCheck = a_Node.gridY - 1;
-            if (xCheck >= 0 && xCheck < scanLocations[scanLocations.Count - 1].gridX)
+            if (xCheck >= 0 && xCheck < areaAmountCheckWidth)
             {
-                if (yCheck >= 0 && yCheck < scanLocations[scanLocations.Count - 1].gridY)
+                if (yCheck >= 0 && yCheck < areaAmountCheckLength)
                 {
                     if (nodeList[yCheck, xCheck] != null)
                     {
@@ -205,25 +205,12 @@ public class AStarGrid : MonoBehaviour {
 
     public void RefreshGrid()
     {
-        List<int> xAmount = new List<int>();
-        List<int> yAmount = new List<int>();
-        for (int i = 0; i < scanLocations.Count; i++)
-        {
-            xAmount.Add(scanLocations[i].gridX);
-            yAmount.Add(scanLocations[i].gridY);
-        }
-        nodeList = new Node[Mathf.Max(yAmount.ToArray()) + 1, Mathf.Max(xAmount.ToArray()) + 1];
+        nodeList = new Node[areaAmountCheckLength + 1, areaAmountCheckWidth + 1];
         for (int i = 0; i < scanLocations.Count; i++)
         {
             bool wall = Physics.CheckBox(scanLocations[i].worldLocation, Vector3.one * tileSize, Quaternion.identity, obstacleMask)? false : true;
             nodeList[scanLocations[i].gridY, scanLocations[i].gridX] = new Node(wall, scanLocations[i].worldLocation, scanLocations[i].gridX, scanLocations[i].gridY);
         }
-    }
-
-    public IEnumerator Rescan()
-    {
-        yield return new WaitForEndOfFrame();
-        RefreshGrid();
     }
 
     public void OnDrawGizmos()

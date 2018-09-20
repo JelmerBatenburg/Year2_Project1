@@ -8,6 +8,7 @@ TagManager:
   - TowerManager
   - IngameTowerDescription
   - Manager
+  - Base
   layers:
   - Default
   - TransparentFX

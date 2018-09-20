@@ -19,7 +19,7 @@ public class PathFinding : MonoBehaviour {
         }
     }
 
-    public void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
+    public List<Node> FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
     {
         Node StartNode = grid.NodeFromWorldPosition(a_StartPos);
         Node TargetNode = grid.NodeFromWorldPosition(a_TargetPos);
@@ -44,7 +44,7 @@ public class PathFinding : MonoBehaviour {
 
             if(CurrentNode == TargetNode)
             {
-                GetFinalPath(StartNode, TargetNode);
+                return GetFinalPath(StartNode, TargetNode);
             }
 
             foreach (Node NeighboreNode in grid.GetNeighboringNodes(CurrentNode))
@@ -69,6 +69,9 @@ public class PathFinding : MonoBehaviour {
                 }
             }
         }
+
+        Debug.Log("Null");
+        return null;
     }
 
     int GetManHattenDistance(Node a_nodeA, Node a_nodeB)
@@ -79,12 +82,12 @@ public class PathFinding : MonoBehaviour {
         return ix + iy;
     }
 
-    void GetFinalPath(Node a_StartNode, Node a_EndNode)
+    List<Node> GetFinalPath(Node a_StartNode, Node a_EndNode)
     {
         List<Node> FinalPath = new List<Node>();
         Node currentNode = a_EndNode;
 
-        while(currentNode != a_StartNode)
+        while (currentNode != a_StartNode)
         {
             FinalPath.Add(currentNode);
             currentNode = currentNode.parent;
@@ -92,6 +95,7 @@ public class PathFinding : MonoBehaviour {
 
         FinalPath.Reverse();
         path = FinalPath;
+        return FinalPath;
     }
 
     public void OnDrawGizmos()
