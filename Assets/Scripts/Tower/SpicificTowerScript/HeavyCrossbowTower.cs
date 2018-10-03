@@ -38,6 +38,7 @@ public class HeavyCrossbowTower : BaseTower {
         yield return new WaitForSeconds(fireRate);
         GameObject tempBolt = Instantiate(boltPrefab, reloadLocation.position, reloadLocation.rotation, reloadLocation);
         bolt = tempBolt.GetComponent<CrossBowBolt>();
+        bolt.damage = Mathf.RoundToInt(damage);
         activeFire = false;
     }
 }

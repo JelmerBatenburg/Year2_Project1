@@ -13,6 +13,27 @@ public class TowerGrid : MonoBehaviour {
     public GameObject tileShowPrefab;
     public float tileShowGap;
     public LayerMask obstacles;
+    public Material available, unavailable;
+    public GameObject cam;
+
+    public void Update()
+    {
+        if (cam.activeInHierarchy)
+        {
+            CheckTowerRange();
+        }
+    }
+
+    public void CheckTowerRange()
+    {
+        for (int i = 0; i < tiles.Count; i++)
+        {
+            if (tiles[i].taken)
+            {
+                tiles[i].tileObject.GetComponent<Renderer>().material = unavailable;
+            }
+        }
+    }
 
     public void Start()
     {
@@ -34,7 +55,8 @@ public class TowerGrid : MonoBehaviour {
                             TowerTile tile = new TowerTile
                             {
                                 taken = false,
-                                location = position
+                                location = position,
+                                tileObject = obj
                             };
                             tiles.Add(tile);
                         }
@@ -62,6 +84,7 @@ public class TowerTile
 {
     public bool taken;
     public Vector3 location;
+    public GameObject tileObject;
 }
 
 [System.Serializable]

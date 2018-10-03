@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: SawbladeTower
+  m_Name: CrossbowTower 1
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
-  towerName: Sawblade tower
-  description: shoots sawblades
-  buildCost: 340
+  towerName: CrossBowTower
+  description: 
+  buildCost: 150
   image: {fileID: 0}
-  tower: {fileID: 1793920454102252, guid: 335f3bbb76e378c40b2b5b8005ab821f, type: 2}
+  tower: {fileID: 1958477981142684, guid: 7f7d6c30a9ae23741b9a63bfc162cc2d, type: 2}

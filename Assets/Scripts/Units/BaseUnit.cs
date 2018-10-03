@@ -1,20 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class BaseUnit : MonoBehaviour {
-
-    public PathFinding pathfinding;
-    public LayerMask targetLayer;
+    public NavMeshAgent agent;
     public bool friendly;
-    public List<Node> path;
-    public float movementSpeed, rotationSpeed, walkDistance;
     public Transform currentTarget;
-    public float health, attackRange, damage, targetDetectionRange, attackSpeed;
-    public bool ranged;
-    public GameObject projectile;
-    public bool attacking;
-    private Transform enemyBase;
+    public Transform enemyBase;
+    public LayerMask targetLayer;
+    public float health, attackRange, targetDetectionRange, attackSpeed, walkspeed;
+    public int damage;
+    public bool attacking, stopWalking;
+
+    public void Move()
+    {
+        if (stopWalking)
+        {
+            transform.LookAt(new Vector3(currentTarget.position.x, transform.position.y, currentTarget.position.z));
+            agent.speed = 0;
+        }
+        else
+        {
+            agent.speed = walkspeed;
+        }
+    }
 
     public void FirstCheck()
     {
@@ -25,136 +36,16 @@ public class BaseUnit : MonoBehaviour {
             {
                 currentTarget = bases[i].GetComponent<Base>().entrance;
                 enemyBase = bases[i].GetComponent<Base>().entrance;
-                StartCoroutine(RefreshPath());
+                agent.SetDestination(enemyBase.position);
                 break;
             }
         }
     }
 
-    public void Awake()
-    {
-        FirstCheck();
-    }
-
-    public void Update()
-    {
-        if (currentTarget)
-        {
-            if (Vector3.Distance(transform.position, currentTarget.position) >= attackRange / 2)
-            {
-                currentTarget = TargetDetection();
-                Move();
-            }
-            AttackCheck();
-        }
-        else
-        {
-            currentTarget = TargetDetection();
-        }
-    }
-
-    public void AttackCheck()
-    {
-        if (currentTarget)
-        {
-            if (currentTarget.GetComponent<BaseUnit>() || currentTarget.GetComponent<BaseTower>())
-            {
-                if (Vector3.Distance(transform.position, currentTarget.gameObject.GetComponent<Collider>().ClosestPoint(transform.position)) <= attackRange)
-                {
-                    if (!attacking)
-                    {
-                        StartCoroutine(Attack());
-                    }
-                }
-            }
-        }
-    }
-
-    public IEnumerator Attack()
-    {
-        attacking = true;
-        if (ranged)
-        {
-
-        }
-        else
-        {
-            if (currentTarget.GetComponent<BaseTower>())
-            {
-                BaseTower tower = currentTarget.GetComponent<BaseTower>();
-                tower.health -= damage;
-                tower.HealthCheck();
-            }
-            if (currentTarget.GetComponent<BaseUnit>())
-            {
-                BaseUnit unit = currentTarget.GetComponent<BaseUnit>();
-                unit.health -= damage;
-                unit.HealthCheck();
-            }
-        }
-        yield return new WaitForSeconds(attackSpeed);
-        attacking = false;
-    }
-
-    public void Move()
-    {
-        if (path != null && path.Count > 1)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, path[0].position, movementSpeed * Time.deltaTime);
-            Vector3 targetPosition = path[0].position - transform.position;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetPosition, rotationSpeed * Time.deltaTime, 0.0f);
-            transform.rotation = Quaternion.LookRotation(newDir);
-
-            if (Vector3.Distance(path[0].position, transform.position) < walkDistance)
-            {
-                path.RemoveAt(0);
-            }
-        }
-        else
-        {
-            if(path != null && path.Count > 0)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, path[0].position, movementSpeed * Time.deltaTime);
-                Vector3 targetPosition = path[0].position - transform.position;
-                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetPosition, rotationSpeed * Time.deltaTime, 0.0f);
-                transform.rotation = Quaternion.LookRotation(newDir);
-
-                if (Vector3.Distance(path[0].position, transform.position) < walkDistance/4)
-                {
-                    path.RemoveAt(0);
-                }
-            }
-        }
-    }
-
-    public IEnumerator RefreshPath()
-    {
-        yield return new WaitForEndOfFrame();
-        if (currentTarget)
-        {
-            if (currentTarget.gameObject.GetComponent<Collider>())
-            {
-                path = GameObject.FindWithTag("Manager").GetComponent<PathFinding>().FindPath(transform.position, currentTarget.gameObject.GetComponent<Collider>().ClosestPoint(transform.position));
-            }
-            else
-            {
-                path = GameObject.FindWithTag("Manager").GetComponent<PathFinding>().FindPath(transform.position, currentTarget.position);
-            }
-        }
-    }
-
-    public void HealthCheck()
-    {
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public Transform TargetDetection()
+    public void TargetDetection()
     {
         Collider[] targetsInRange = Physics.OverlapSphere(transform.position, targetDetectionRange, targetLayer);
-        if(targetsInRange.Length > 0)
+        if (targetsInRange.Length > 0)
         {
             List<float> distances = new List<float>();
             for (int i = 0; i < targetsInRange.Length; i++)
@@ -166,27 +57,60 @@ public class BaseUnit : MonoBehaviour {
 
             for (int i = 0; i < distances.Count; i++)
             {
-                if(distance == distances[i])
+                if (distance == distances[i])
                 {
-                    StartCoroutine(RefreshPath());
-                    return targetsInRange[i].transform;
+                    agent.SetDestination(targetsInRange[i].transform.position);
+                    currentTarget = targetsInRange[i].transform;
+                    agent.SetDestination(currentTarget.position);
                 }
             }
         }
-        if(currentTarget != enemyBase)
+        if (!currentTarget)
         {
-            StartCoroutine(RefreshPath());
-            return enemyBase;
+            currentTarget = enemyBase;
+            agent.SetDestination(currentTarget.position);
         }
-        return enemyBase;
     }
 
-    public void OnDrawGizmosSelected()
+    public virtual void Damage(float dmg)
     {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, targetDetectionRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        health -= dmg;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
+    public void Attack()
+    {
+        if (!attacking)
+        {
+            if (currentTarget && Vector3.Distance(transform.position, currentTarget.position) <= attackRange)
+            {
+                stopWalking = true;
+                StartCoroutine(AttackCoroutine());
+            }
+            else
+            {
+                stopWalking = false;
+            }
+        }
+    }
+
+    public virtual IEnumerator AttackCoroutine()
+    {
+        attacking = true;
+        if (currentTarget.parent.GetComponent<Base>())
+        {
+            currentTarget.parent.GetComponent<Base>().health -= damage;
+            currentTarget.parent.GetComponent<Base>().HealthCheck();
+        }
+        else if (currentTarget.GetComponent<BaseTower>())
+        {
+            currentTarget.GetComponent<BaseTower>().health -= damage;
+            currentTarget.GetComponent<BaseTower>().HealthCheck();
+        }
+        yield return new WaitForSeconds(attackSpeed);
+        attacking = false;
     }
 }

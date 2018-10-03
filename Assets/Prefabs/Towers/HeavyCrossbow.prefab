@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 95890967544909610}
   - component: {fileID: 114937205434361690}
   - component: {fileID: 65272907109299824}
+  - component: {fileID: 208220434784734294}
   m_Layer: 11
   m_Name: HeavyCrossbow
   m_TagString: Untagged
@@ -336,7 +337,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958477981142684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -45.301678, y: -0.025066376, z: -23.548462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4007395083839558}
@@ -518,7 +519,7 @@ BoxCollider:
   m_GameObject: {fileID: 1958477981142684}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 6.678517, y: 3.4180355, z: 5.8417}
   m_Center: {x: 0.06793094, y: 1.2090178, z: -0.28292823}
@@ -646,3 +647,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.005546093, y: 4.5951233, z: 0.28136647}
     m_Extent: {x: 3.3088388, y: 5.2361116, z: 3.7650437}
   m_DirtyAABB: 0
+--- !u!208 &208220434784734294
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958477981142684}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.54, y: 4.86, z: 2.65}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.59, z: 0}
+  m_TimeToStationary: 0.5

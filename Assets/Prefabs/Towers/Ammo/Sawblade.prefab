@@ -449,3 +449,11 @@ MonoBehaviour:
   damage: 0
   detectionRange: 0.5
   rotationPart: {fileID: 4883503784982800}
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 20231
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  damagedList: []
+  damageRange: 0.5

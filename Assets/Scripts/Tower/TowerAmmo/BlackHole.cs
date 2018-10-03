@@ -7,6 +7,7 @@ public class BlackHole : MonoBehaviour {
     public LayerMask enemyMask;
     public float speed;
     public int scale;
+    public int damage;
 
     public void Update()
     {
@@ -37,7 +38,7 @@ public class BlackHole : MonoBehaviour {
         Collider[] enemies = Physics.OverlapSphere(transform.position, transform.localScale.z, enemyMask);
         for (int i = 0; i < enemies.Length; i++)
         {
-            Destroy(enemies[i].gameObject);
+            enemies[i].transform.GetComponent<BaseUnit>().Damage(damage);
         }
         scale = 2;
         yield return new WaitForSeconds(time / 2);

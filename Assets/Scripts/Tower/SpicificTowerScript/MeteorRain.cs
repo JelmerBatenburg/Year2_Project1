@@ -27,6 +27,7 @@ public class MeteorRain : BaseTower {
     public enum ShotType { pinshot,laser}
     public IEnumerator Fire(Vector3 position,ShotType type,bool turnsOff)
     {
+        position = new Vector3(position.x, transform.position.y, position.z);
         activeFire = true;
         GameObject tempEmpty = Instantiate(empty, transform.position + (position - transform.position) / 2 + new Vector3(0, -1, 0), Quaternion.identity);
         tempEmpty.transform.LookAt(position);

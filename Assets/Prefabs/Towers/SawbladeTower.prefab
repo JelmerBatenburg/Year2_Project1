@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 4675960438227728}
   - component: {fileID: 114298253007269984}
   - component: {fileID: 136158648509081502}
+  - component: {fileID: 208488198014805658}
   m_Layer: 11
   m_Name: SawbladeTower
   m_TagString: Untagged
@@ -266,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793920454102252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.023932, y: 0.0043029785, z: -49.391693}
+  m_LocalPosition: {x: -38.8655, y: -0.025062561, z: -14.753403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756459632271030}
@@ -630,6 +631,9 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 4096
+  raycastmask:
+    serializedVersion: 2
+    m_Bits: 0
   rotationPoint: {fileID: 4835587311879738}
   activeFire: 0
   sawblade: {fileID: 1717709831519324, guid: 1fade7972c2627d47ade073ae9bb992f, type: 2}
@@ -642,8 +646,23 @@ CapsuleCollider:
   m_GameObject: {fileID: 1793920454102252}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 2.0073614
   m_Height: 4.014723
   m_Direction: 1
   m_Center: {x: 0.034129143, y: 0.35343885, z: 0}
+--- !u!208 &208488198014805658
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793920454102252}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 2.4, y: 1, z: 2.4}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

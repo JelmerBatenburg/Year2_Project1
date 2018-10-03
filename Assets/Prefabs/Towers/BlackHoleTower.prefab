@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 4824590452147020}
   - component: {fileID: 114484799966722790}
   - component: {fileID: 65075224004738534}
+  - component: {fileID: 208101594724465288}
   m_Layer: 11
   m_Name: BlackHoleTower
   m_TagString: Untagged
@@ -1072,7 +1073,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068228478072018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7023726, y: 0.0043029785, z: 38.65576}
+  m_LocalPosition: {x: -39.49623, y: -0.025062561, z: -20.845371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4363805619567970}
@@ -2413,7 +2414,7 @@ BoxCollider:
   m_GameObject: {fileID: 1068228478072018}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.9855824, y: 3.9454365, z: 6.129033}
   m_Center: {x: 0.013675213, y: 1.4727182, z: 0.073993206}
@@ -2446,3 +2447,18 @@ MonoBehaviour:
   rotationPart2: {fileID: 4651381202323974}
   firepoint: {fileID: 4347596516660596}
   activeFire: 0
+--- !u!208 &208101594724465288
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068228478072018}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.885, y: 4.415, z: 2.835}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 5.13, z: 0.56}
+  m_TimeToStationary: 0.5

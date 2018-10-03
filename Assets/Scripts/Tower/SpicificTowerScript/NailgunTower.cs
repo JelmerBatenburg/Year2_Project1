@@ -32,6 +32,7 @@ public class NailgunTower : BaseTower {
         activeFire = true;
         GameObject tempNail = Instantiate(nailPrefab, fireLocation.position, fireLocation.rotation);
         tempNail.GetComponent<CrossBowBolt>().speed = nailSpeed;
+        tempNail.GetComponent<CrossBowBolt>().damage = Mathf.RoundToInt(damage);
         Destroy(tempNail, 3);
         yield return new WaitForSeconds(fireRate);
         activeFire = false;

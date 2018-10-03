@@ -66,6 +66,8 @@ GameObject:
   - component: {fileID: 4242035731468876}
   - component: {fileID: 95740769873137360}
   - component: {fileID: 114639769901596112}
+  - component: {fileID: 65034033552208860}
+  - component: {fileID: 208025484416506026}
   m_Layer: 11
   m_Name: MeteorRain
   m_TagString: Untagged
@@ -168,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740584672517432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.188447, y: 0.0043029785, z: -1.429718}
+  m_LocalPosition: {x: -42.60064, y: -0.025066376, z: -19.433212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4729728083513638}
@@ -245,6 +247,18 @@ Transform:
   m_Father: {fileID: 4242035731468876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65034033552208860
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740584672517432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 7.546982, y: 5.173647, z: 7.4398756}
+  m_Center: {x: 0.06549835, y: 2.0868235, z: 0.05014181}
 --- !u!95 &95740769873137360
 Animator:
   serializedVersion: 3
@@ -344,3 +358,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 3.7724438, z: 0}
     m_Extent: {x: 3.7784886, y: 3.7724438, z: 3.7784877}
   m_DirtyAABB: 0
+--- !u!208 &208025484416506026
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740584672517432}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.925, y: 2.535, z: 3.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.16, z: 0}
+  m_TimeToStationary: 0.5

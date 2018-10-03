@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23706929495707582}
   - component: {fileID: 114292862812138330}
   - component: {fileID: 65638504834158406}
+  - component: {fileID: 208148251963518170}
   m_Layer: 11
   m_Name: WallPillar
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672556469931002}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 9.777953, y: 0.028278613, z: 24.395203}
+  m_LocalPosition: {x: -42.686783, y: -0.025066376, z: -20.021881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +94,7 @@ BoxCollider:
   m_GameObject: {fileID: 1672556469931002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5, y: 4.9999995, z: 5.645266}
   m_Center: {x: 0, y: -1.1349774e-14, z: 2.7986698}
@@ -117,8 +118,26 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 0
+  raycastmask:
+    serializedVersion: 2
+    m_Bits: 0
   wallmask:
     serializedVersion: 2
     m_Bits: 2048
   walls: []
   wall: {fileID: 1396795445366048, guid: fe1fe1320da086f498cea2ca80fb2c4e, type: 2}
+--- !u!208 &208148251963518170
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672556469931002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.5, y: 4.5, z: 4.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.28}
+  m_TimeToStationary: 0.5
