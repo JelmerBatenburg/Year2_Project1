@@ -13,7 +13,7 @@ public class Base : MonoBehaviour {
     [Range(1,100)]
     public int rangePercentage, shieldPercentage;
     private bool sendingOut;
-    public GameObject soldier, shieldman, ranged;
+    public GameObject soldier, shieldman, ranged, deathScreen;
 
     public void Update()
     {
@@ -27,7 +27,11 @@ public class Base : MonoBehaviour {
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
+            if (friendly)
+            {
+                deathScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
     }
 

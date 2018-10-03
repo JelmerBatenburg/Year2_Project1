@@ -27,7 +27,14 @@ public class RangedUnit : BaseUnit {
         animationController.SetBool("Attacking", false);
         GameObject g = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Destroy(g.gameObject, 2);
-        g.transform.LookAt(new Vector3(currentTarget.position.x,g.transform.position.y,currentTarget.position.z));
+        if (currentTarget)
+        {
+            g.transform.LookAt(new Vector3(currentTarget.position.x, g.transform.position.y, currentTarget.position.z));
+        }
+        else
+        {
+            g.transform.LookAt(transform.position + transform.forward * 20);
+        }
         RangedProjectile p = g.GetComponent<RangedProjectile>();
         p.damage = damage;
         p.target = currentTarget;

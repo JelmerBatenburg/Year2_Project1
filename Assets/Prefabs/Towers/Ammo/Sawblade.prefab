@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 0
+  damage: 30
   detectionRange: 0.5
   rotationPart: {fileID: 4883503784982800}
   obstacleMask:
@@ -456,4 +456,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   damagedList: []
-  damageRange: 0.5
+  damageRange: 2

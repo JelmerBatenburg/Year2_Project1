@@ -33,17 +33,18 @@ public class Sawblade : MonoBehaviour {
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
+        EnemyDetection();
     }
 
     public void EnemyDetection()
     {
-        Collider[] targetsInRange = Physics.OverlapSphere(transform.position, damageRange);
+        Collider[] targetsInRange = Physics.OverlapSphere(transform.position, damageRange,enemyMask);
         for (int i = 0; i < targetsInRange.Length; i++)
         {
             if (!damagedList.Contains(targetsInRange[i].gameObject))
             {
                 damagedList.Add(targetsInRange[i].gameObject);
-                targetsInRange[i].GetComponent<BaseUnit>().Damage(damage);
+                targetsInRange[i].gameObject.GetComponent<BaseUnit>().Damage(damage);
             }
         }
     }

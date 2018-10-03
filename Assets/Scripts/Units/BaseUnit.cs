@@ -107,15 +107,19 @@ public class BaseUnit : MonoBehaviour {
         attacking = true;
         yield return new WaitForEndOfFrame();
         animationController.SetBool("Attacking", false);
-        if (currentTarget.parent.GetComponent<Base>())
+        if (currentTarget)
         {
-            currentTarget.parent.GetComponent<Base>().health -= damage;
-            currentTarget.parent.GetComponent<Base>().HealthCheck();
-        }
-        else if (currentTarget.GetComponent<BaseTower>())
-        {
-            currentTarget.GetComponent<BaseTower>().health -= damage;
-            currentTarget.GetComponent<BaseTower>().HealthCheck();
+            
+            if (currentTarget.parent.GetComponent<Base>())
+            {
+                currentTarget.parent.GetComponent<Base>().health -= damage;
+                currentTarget.parent.GetComponent<Base>().HealthCheck();
+            }
+            else if (currentTarget.GetComponent<BaseTower>())
+            {
+                currentTarget.GetComponent<BaseTower>().health -= damage;
+                currentTarget.GetComponent<BaseTower>().HealthCheck();
+            }
         }
         yield return new WaitForSeconds(attackSpeed);
         attacking = false;
