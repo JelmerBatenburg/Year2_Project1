@@ -1807,12 +1807,12 @@ Prefab:
     - target: {fileID: 114217309806959062, guid: 5ba0fcc26eae5bc43a9787508437dabd,
         type: 2}
       propertyPath: spawnSpeed
-      value: 0.3
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 114217309806959062, guid: 5ba0fcc26eae5bc43a9787508437dabd,
         type: 2}
       propertyPath: waveSpeed
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114217309806959062, guid: 5ba0fcc26eae5bc43a9787508437dabd,
         type: 2}

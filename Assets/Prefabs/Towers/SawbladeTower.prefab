@@ -622,12 +622,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1884135b94b541a4fa1f9f7fca4f94eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  damage: 10
+  health: 300
+  damage: 30
   radius: 60
   fireRate: 2
   placed: 0
-  towerInfo: {fileID: 11400000, guid: 728417e3e9d22644489ee3a8317a0660, type: 2}
+  towerInfo: {fileID: 0}
   targetMask:
     serializedVersion: 2
     m_Bits: 4096

@@ -21,7 +21,10 @@ public class RangedUnit : BaseUnit {
 
     public override IEnumerator AttackCoroutine()
     {
+        animationController.SetBool("Attacking", true);
         attacking = true;
+        yield return new WaitForEndOfFrame();
+        animationController.SetBool("Attacking", false);
         GameObject g = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Destroy(g.gameObject, 2);
         g.transform.LookAt(new Vector3(currentTarget.position.x,g.transform.position.y,currentTarget.position.z));

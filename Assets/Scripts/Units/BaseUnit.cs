@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class BaseUnit : MonoBehaviour {
@@ -13,6 +14,7 @@ public class BaseUnit : MonoBehaviour {
     public float health, attackRange, targetDetectionRange, attackSpeed, walkspeed;
     public int damage;
     public bool attacking, stopWalking;
+    public Animator animationController;
 
     public void Move()
     {
@@ -20,10 +22,12 @@ public class BaseUnit : MonoBehaviour {
         {
             transform.LookAt(new Vector3(currentTarget.position.x, transform.position.y, currentTarget.position.z));
             agent.speed = 0;
+            animationController.SetBool("Walking", false);
         }
         else
         {
             agent.speed = walkspeed;
+            animationController.SetBool("Walking", true);
         }
     }
 
@@ -99,7 +103,10 @@ public class BaseUnit : MonoBehaviour {
 
     public virtual IEnumerator AttackCoroutine()
     {
+        animationController.SetBool("Attacking", true);
         attacking = true;
+        yield return new WaitForEndOfFrame();
+        animationController.SetBool("Attacking", false);
         if (currentTarget.parent.GetComponent<Base>())
         {
             currentTarget.parent.GetComponent<Base>().health -= damage;
