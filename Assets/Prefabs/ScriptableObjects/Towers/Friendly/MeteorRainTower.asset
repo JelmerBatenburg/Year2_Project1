@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: MeteorRain
+  m_Name: MeteorRainTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
-  towerName: Meteor Rain
+  towerName: 
   description: 
-  buildCost: 1300
+  buildCost: 0
   image: {fileID: 0}
-  tower: {fileID: 1740584672517432, guid: ace0c81a91b406f41abec889ad8c2ce2, type: 2}
+  tower: {fileID: 0}

@@ -21,7 +21,7 @@ public class TowerPlacement : MonoBehaviour {
                 List<float> distances = new List<float>();
                 for (int i = 0; i < grid.tiles.Count; i++)
                 {
-                    if (!grid.tiles[i].taken)
+                    if (!grid.tiles[i].taken && grid.tiles[i].inRange)
                     {
                         distances.Add(Vector3.Distance(grid.tiles[i].location, hit.point));
                     }

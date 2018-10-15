@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: BlackHoleTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
-  towerName: Black hole tower
-  description: Creates a black hole
-  buildCost: 1200
+  towerName: 
+  description: 
+  buildCost: 0
   image: {fileID: 0}
-  tower: {fileID: 1068228478072018, guid: 4f7984f16a44d07478a786df11c5113f, type: 2}
+  tower: {fileID: 0}

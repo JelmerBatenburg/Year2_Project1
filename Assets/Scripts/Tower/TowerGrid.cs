@@ -15,6 +15,7 @@ public class TowerGrid : MonoBehaviour {
     public LayerMask obstacles;
     public Material available, unavailable;
     public GameObject cam;
+    public List<ConnectionTowers> connectionPoints;
 
     public void Update()
     {
@@ -28,9 +29,22 @@ public class TowerGrid : MonoBehaviour {
     {
         for (int i = 0; i < tiles.Count; i++)
         {
-            if (tiles[i].taken)
+            for (int i2 = 0; i2 < connectionPoints.Count; i2++)
+            {
+                tiles[i].inRange = false;
+                if(Vector3.Distance(tiles[i].location,connectionPoints[i2].transform.position) <= connectionPoints[i2].energyRange)
+                {
+                    tiles[i].inRange = true;
+                    break;
+                }
+            }
+            if (tiles[i].taken || !tiles[i].inRange)
             {
                 tiles[i].tileObject.GetComponent<Renderer>().material = unavailable;
+            }
+            else
+            {
+                tiles[i].tileObject.GetComponent<Renderer>().material = available;
             }
         }
     }
@@ -82,7 +96,7 @@ public class TowerGrid : MonoBehaviour {
 [System.Serializable]
 public class TowerTile
 {
-    public bool taken;
+    public bool taken, inRange;
     public Vector3 location;
     public GameObject tileObject;
 }

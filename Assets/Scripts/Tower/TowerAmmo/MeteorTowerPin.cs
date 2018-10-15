@@ -8,6 +8,7 @@ public class MeteorTowerPin : MonoBehaviour {
     public MeteorRain tower;
     public bool stopRotate;
     public float impactRange;
+    public float currentRotate;
 
     public void Start()
     {
@@ -25,10 +26,15 @@ public class MeteorTowerPin : MonoBehaviour {
         if (!stopRotate)
         {
             transform.parent.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
+            currentRotate += rotationSpeed * Time.deltaTime;
+        }
+        if(currentRotate > 90 && !stopRotate)
+        {
+            Check();
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void Check()
     {
         stopRotate = true;
         GetComponent<Rigidbody>().isKinematic = true;
@@ -36,13 +42,17 @@ public class MeteorTowerPin : MonoBehaviour {
         Destroy(transform.parent.gameObject, tower.fireAmount);
         StartCoroutine(ExtraShots());
     }
+
     public IEnumerator ExtraShots()
     {
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < tower.fireAmount; i++)
         {
             yield return new WaitForSeconds(tower.fireRate);
-            StartCoroutine(tower.Fire(transform.position + new Vector3(Random.Range(-impactRange, impactRange), 0, Random.Range(-impactRange, impactRange)), MeteorRain.ShotType.laser, (i == tower.fireAmount - 1)? true : false));
+            if (tower)
+            {
+                StartCoroutine(tower.Fire(transform.position + new Vector3(Random.Range(-impactRange, impactRange), 0, Random.Range(-impactRange, impactRange)), MeteorRain.ShotType.laser, (i == tower.fireAmount - 1) ? true : false));
+            }
         }
     }
 }

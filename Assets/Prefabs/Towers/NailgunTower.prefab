@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 120
-  damage: 15
+  damage: 7
   radius: 70
   fireRate: 0.3
   placed: 0

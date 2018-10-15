@@ -5,6 +5,8 @@ using UnityEngine;
 public class MeteorLaser : MonoBehaviour {
 
     public float rotationSpeed;
+    public int damage;
+
 
     public void Start()
     {

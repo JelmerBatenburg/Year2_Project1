@@ -16,7 +16,10 @@ public class MeteorRain : BaseTower {
         if (placed)
         {
             GameObject enemy = TargetDetect(transform.position, false);
-            rotationPoint.LookAt(new Vector3(enemy.transform.position.x, rotationPoint.position.y, enemy.transform.position.z));
+            if (enemy)
+            {
+                rotationPoint.LookAt(new Vector3(enemy.transform.position.x, rotationPoint.position.y, enemy.transform.position.z));
+            }
             if (!activeFire && enemy)
             {
                 StartCoroutine(Fire(enemy.transform.position, ShotType.pinshot, false));
