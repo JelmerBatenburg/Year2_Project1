@@ -523,6 +523,7 @@ ModelImporter:
     101034: VIS_upper_arm_ik_pole.L_end
     101036: VIS_upper_arm_ik_pole.R
     101038: VIS_upper_arm_ik_pole.R_end
+    101040: Soldier
     400000: Arm.001
     400002: Back
     400004: Base Body.002
@@ -1043,6 +1044,7 @@ ModelImporter:
     401034: VIS_upper_arm_ik_pole.L_end
     401036: VIS_upper_arm_ik_pole.R
     401038: VIS_upper_arm_ik_pole.R_end
+    401040: Soldier
     2100000: Material
     2100002: No Name
     2100004: Shoes
@@ -1052,6 +1054,7 @@ ModelImporter:
     2100012: Helm 3
     2100014: Back
     2100016: Gun
+    2100018: Soldier
     4300000: Shoes.002
     4300002: Breastplate.001
     4300004: Arm.001
@@ -1059,6 +1062,7 @@ ModelImporter:
     4300008: Helm Set 3
     4300010: Back
     4300012: Gun
+    4300014: Soldier
     7400000: RigSoldier|AttackInfantry
     7400002: RigSoldier|AttackPhalanx
     7400004: RigSoldier|AttackSoldier
@@ -1081,6 +1085,7 @@ ModelImporter:
     13700008: Gun
     13700010: Helm Set 3
     13700012: Shoes.002
+    13700014: Soldier
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

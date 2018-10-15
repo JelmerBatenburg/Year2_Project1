@@ -8,6 +8,12 @@ public class SawbladeTower : BaseTower {
     public GameObject sawblade;
     public Transform firePoint;
 
+    public void Start()
+    {
+        range.SetActive(true);
+        SetRange();
+    }
+
     public void Update()
     {
         if (placed)

@@ -48,6 +48,7 @@ public class TowerPlacement : MonoBehaviour {
                     tower.GetComponent<Collider>().enabled = true;
                     active = false;
                     tower.GetComponent<BaseTower>().placed = true;
+                    tower.GetComponent<BaseTower>().range.SetActive(false);
                     tower = null;
                     found = false;
                     currency.CurrencyChange();

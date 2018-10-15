@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Base : MonoBehaviour {
 
@@ -14,6 +15,8 @@ public class Base : MonoBehaviour {
     public int rangePercentage, shieldPercentage;
     private bool sendingOut;
     public GameObject soldier, shieldman, ranged, deathScreen;
+    public Animator newWaveManager;
+    public Text waveInput;
 
     public void Update()
     {
@@ -37,8 +40,10 @@ public class Base : MonoBehaviour {
 
     public IEnumerator SendOutUnits()
     {
+        newWaveManager.SetTrigger("NewWave");
         sendingOut = true;
         currentWave++;
+        waveInput.text = currentWave.ToString();
         for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
         {
             int percentage = Random.Range(1, 100);

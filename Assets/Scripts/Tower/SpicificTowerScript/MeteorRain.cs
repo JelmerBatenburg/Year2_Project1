@@ -8,19 +8,26 @@ public class MeteorRain : BaseTower {
     public GameObject pinShot, laser, empty;
     public bool activeFire;
     public Transform firePoint, rotationPoint;
-    public float fireDelay;
+    public float fireDelay, shortDistance;
     public GameObject currentpin;
+
+    public void Start()
+    {
+        range.SetActive(true);
+        SetRange();
+    }
 
     public void Update()
     {
         if (placed)
         {
+            InfoPopUp();
             GameObject enemy = TargetDetect(transform.position, false);
-            if (enemy)
+            if (enemy && Vector3.Distance(transform.position,enemy.transform.position) > shortDistance)
             {
                 rotationPoint.LookAt(new Vector3(enemy.transform.position.x, rotationPoint.position.y, enemy.transform.position.z));
             }
-            if (!activeFire && enemy)
+            if (!activeFire && enemy && Vector3.Distance(transform.position, enemy.transform.position) > shortDistance)
             {
                 StartCoroutine(Fire(enemy.transform.position, ShotType.pinshot, false));
             }

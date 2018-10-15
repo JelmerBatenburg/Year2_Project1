@@ -10,6 +10,12 @@ public class BlackholeTower : BaseTower {
     public Transform rotationPart1,rotationPart2,firepoint;
     public bool activeFire;
 
+    public void Start()
+    {
+        range.SetActive(true);
+        SetRange();
+    }
+
     public void Update()
     {
         if (placed)

@@ -8,6 +8,12 @@ public class BaseTower : MonoBehaviour {
     public bool placed;
     public TowerScriptableObject towerInfo;
     public LayerMask targetMask, raycastmask;
+    public GameObject range;
+
+    public void SetRange()
+    {
+        range.transform.localScale = Vector3.one * radius * 2;
+    }
 
     public GameObject TargetDetect(Vector3 position, bool raycast)
     {

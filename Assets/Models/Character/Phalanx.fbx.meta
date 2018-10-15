@@ -525,6 +525,8 @@ ModelImporter:
     101038: VIS_upper_arm_ik_pole.L_end
     101040: VIS_upper_arm_ik_pole.R
     101042: VIS_upper_arm_ik_pole.R_end
+    101044: Phalanx
+    101046: Sword.001
     400000: Base Body
     400002: breast.L
     400004: breast.L_end
@@ -1047,6 +1049,8 @@ ModelImporter:
     401038: VIS_upper_arm_ik_pole.L_end
     401040: VIS_upper_arm_ik_pole.R
     401042: VIS_upper_arm_ik_pole.R_end
+    401044: Phalanx
+    401046: Sword.001
     2100000: Material
     2100002: No Name
     2100004: Sword
@@ -1058,6 +1062,7 @@ ModelImporter:
     2100016: Leg
     2100018: Heavy Arm
     2100020: Shield
+    2100022: Phalanx
     4300000: Sword
     4300002: Shoes
     4300004: Base Body
@@ -1067,6 +1072,8 @@ ModelImporter:
     4300012: Leg
     4300014: Heavy Arm
     4300016: Shield
+    4300018: Sword.001
+    4300020: Phalanx
     7400000: RigPhalanx|AttackInfantry
     7400002: RigPhalanx|AttackPhalanx
     7400004: RigPhalanx|AttackSoldier
@@ -1092,6 +1099,8 @@ ModelImporter:
     13700012: Shield
     13700014: Shoes
     13700016: Sword
+    13700018: Phalanx
+    13700020: Sword.001
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

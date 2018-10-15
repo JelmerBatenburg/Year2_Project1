@@ -9,6 +9,12 @@ public class NailgunTower : BaseTower {
     public float nailSpeed;
     public GameObject nailPrefab;
 
+    public void Start()
+    {
+        range.SetActive(true);
+        SetRange();
+    }
+
     public void Update()
     {
         if (placed)

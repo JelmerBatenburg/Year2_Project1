@@ -22,18 +22,24 @@ public class TowerInfoUi : MonoBehaviour {
 
     public void SetTower(GameObject tower)
     {
+        if (selectedTower)
+        {
+            selectedTower.GetComponent<BaseTower>().range.SetActive(false);
+        }
         selectedTower = tower;
         transform.position = tower.transform.position + Vector3.up * 20;
         uiShow.SetActive(true);
         nameInput.text = selectedTower.GetComponent<BaseTower>().towerInfo.name;
         descriptionInput.text = selectedTower.GetComponent<BaseTower>().towerInfo.description;
         active = true;
+        selectedTower.GetComponent<BaseTower>().range.SetActive(true);
     }
 
     public void CloseButton()
     {
         uiShow.SetActive(false);
         active = false;
+        selectedTower.GetComponent<BaseTower>().range.SetActive(false);
     }
 
     public void DestroyButton()

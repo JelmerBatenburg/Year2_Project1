@@ -524,6 +524,8 @@ ModelImporter:
     101036: VIS_upper_arm_ik_pole.L_end
     101038: VIS_upper_arm_ik_pole.R
     101040: VIS_upper_arm_ik_pole.R_end
+    101042: Infantry
+    101044: Sword
     400000: Arm
     400002: Base Body.001
     400004: breast.L
@@ -1045,6 +1047,8 @@ ModelImporter:
     401036: VIS_upper_arm_ik_pole.L_end
     401038: VIS_upper_arm_ik_pole.R
     401040: VIS_upper_arm_ik_pole.R_end
+    401042: Infantry
+    401044: Sword
     2100000: Material
     2100002: Body
     2100004: Arm
@@ -1054,6 +1058,7 @@ ModelImporter:
     2100012: Shoulder
     2100014: Pants
     2100016: Sword
+    2100018: Infantry
     4300000: Base Body.001
     4300002: Arm
     4300004: Breastplate
@@ -1062,6 +1067,8 @@ ModelImporter:
     4300010: Shoulder
     4300012: Pants
     4300014: Sword.001
+    4300016: Infantry
+    4300018: Sword
     7400000: RigInfantry|AttackInfantry
     7400002: RigInfantry|AttackPhalanx
     7400004: RigInfantry|AttackSoldier
@@ -1085,6 +1092,8 @@ ModelImporter:
     13700010: Shoes.001
     13700012: Shoulder
     13700014: Sword.001
+    13700016: Infantry
+    13700018: Sword
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

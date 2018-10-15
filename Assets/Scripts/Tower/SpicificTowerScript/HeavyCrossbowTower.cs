@@ -11,6 +11,12 @@ public class HeavyCrossbowTower : BaseTower {
     public Transform reloadLocation;
     public GameObject boltPrefab;
 
+    public void Start()
+    {
+        range.SetActive(true);
+        SetRange();
+    }
+
     public void Update()
     {
         if (placed)
