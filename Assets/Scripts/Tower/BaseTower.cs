@@ -6,7 +6,7 @@ public class BaseTower : MonoBehaviour {
 
     public float health, damage, radius, fireRate;
     public bool placed;
-    public TowerScriptObject towerInfo;
+    public TowerScriptableObject towerInfo;
     public LayerMask targetMask, raycastmask;
 
     public GameObject TargetDetect(Vector3 position, bool raycast)

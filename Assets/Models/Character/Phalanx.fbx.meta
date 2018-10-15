@@ -1049,6 +1049,15 @@ ModelImporter:
     401042: VIS_upper_arm_ik_pole.R_end
     2100000: Material
     2100002: No Name
+    2100004: Sword
+    2100006: Shoes
+    2100008: Body
+    2100010: Helm 2
+    2100012: Heavy Shoulder
+    2100014: Heavy Breastplate
+    2100016: Leg
+    2100018: Heavy Arm
+    2100020: Shield
     4300000: Sword
     4300002: Shoes
     4300004: Base Body
@@ -1069,6 +1078,10 @@ ModelImporter:
     7400016: RigPhalanx|RunPhalanx
     7400018: RigPhalanx|RunSoldier
     7400020: RigPhalanx|SwordAction
+    7400022: RigPhalanx|PhalanxAttack
+    7400024: RigPhalanx|PhalanxDefend
+    7400026: RigPhalanx|PhalanxIdle
+    7400028: RigPhalanx|PhalanxRun
     9500000: //RootNode
     13700000: Base Body
     13700002: Heavy Arm
@@ -1079,6 +1092,7 @@ ModelImporter:
     13700012: Shield
     13700014: Shoes
     13700016: Sword
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -1108,8 +1122,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RigPhalanx|AttackPhalanx
-      takeName: RigPhalanx|AttackPhalanx
+      name: RigPhalanx|PhalanxAttack
+      takeName: RigPhalanx|PhalanxAttack
       firstFrame: 0
       lastFrame: 70
       wrapMode: 0
@@ -1136,10 +1150,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RigPhalanx|DefendPhalanx
-      takeName: RigPhalanx|DefendPhalanx
+      name: RigPhalanx|PhalanxDefend
+      takeName: RigPhalanx|PhalanxDefend
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1164,8 +1178,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RigPhalanx|IdlePhalanx
-      takeName: RigPhalanx|IdlePhalanx
+      name: RigPhalanx|PhalanxIdle
+      takeName: RigPhalanx|PhalanxIdle
       firstFrame: 0
       lastFrame: 180
       wrapMode: 0
@@ -1192,8 +1206,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RigPhalanx|RunPhalanx
-      takeName: RigPhalanx|RunPhalanx
+      name: RigPhalanx|PhalanxRun
+      takeName: RigPhalanx|PhalanxRun
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0

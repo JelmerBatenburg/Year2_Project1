@@ -1045,6 +1045,13 @@ ModelImporter:
     401038: VIS_upper_arm_ik_pole.R_end
     2100000: Material
     2100002: No Name
+    2100004: Shoes
+    2100006: Breastplate
+    2100008: Arm
+    2100010: Body
+    2100012: Helm 3
+    2100014: Back
+    2100016: Gun
     4300000: Shoes.002
     4300002: Breastplate.001
     4300004: Arm.001
@@ -1063,6 +1070,9 @@ ModelImporter:
     7400016: RigSoldier|RunPhalanx
     7400018: RigSoldier|RunSoldier
     7400020: RigSoldier|SwordAction
+    7400022: RigSoldier|SoldierAttack
+    7400024: RigSoldier|SoldierIdle
+    7400026: RigSoldier|SoldierRun
     9500000: //RootNode
     13700000: Arm.001
     13700002: Back
@@ -1071,6 +1081,7 @@ ModelImporter:
     13700008: Gun
     13700010: Helm Set 3
     13700012: Shoes.002
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -1100,10 +1111,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RigSoldier|AttackSoldier
-      takeName: RigSoldier|AttackSoldier
+      name: RigSoldier|SoldierAttack
+      takeName: RigSoldier|SoldierAttack
       firstFrame: 0
-      lastFrame: 50
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1128,8 +1139,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RigSoldier|IdleSoldier
-      takeName: RigSoldier|IdleSoldier
+      name: RigSoldier|SoldierIdle
+      takeName: RigSoldier|SoldierIdle
       firstFrame: 0
       lastFrame: 180
       wrapMode: 0
@@ -1156,8 +1167,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RigSoldier|RunSoldier
-      takeName: RigSoldier|RunSoldier
+      name: RigSoldier|SoldierRun
+      takeName: RigSoldier|SoldierRun
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0

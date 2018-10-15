@@ -293,7 +293,7 @@ MonoBehaviour:
   radius: 80
   fireRate: 0.002
   placed: 0
-  towerInfo: {fileID: 11400000, guid: 950454cf98df52446a704869c71e6afc, type: 2}
+  towerInfo: {fileID: 11400000, guid: 6d6cb9a5a090c944e84c92593fdbbf32, type: 2}
   targetMask:
     serializedVersion: 2
     m_Bits: 4096

@@ -112,10 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d065cdd1d7c78438ca394e0c30c8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
   tower: {fileID: 0}
   stopRotate: 0
   impactRange: 8
+  currentRotate: 0
 --- !u!136 &136404911706532358
 CapsuleCollider:
   m_ObjectHideFlags: 1

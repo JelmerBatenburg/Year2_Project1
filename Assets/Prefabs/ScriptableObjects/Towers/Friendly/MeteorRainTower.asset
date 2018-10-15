@@ -8,11 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 21766dc079240ce40bf17ae11ba36bdd, type: 3}
   m_Name: MeteorRainTower
-  m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
-  towerName: 
+  m_EditorClassIdentifier: 
+  towerName: MeteorRainTower
   description: 
-  buildCost: 0
+  buildCost: 1200
   image: {fileID: 0}
-  tower: {fileID: 0}
+  tower: {fileID: 1740584672517432, guid: ace0c81a91b406f41abec889ad8c2ce2, type: 2}

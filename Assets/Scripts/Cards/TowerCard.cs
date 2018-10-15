@@ -9,7 +9,7 @@ public class TowerCard : MonoBehaviour
     public Text descriptionInput;
     public Text costInput;
     public Image spriteInput;
-    public TowerScriptObject towerInput;
+    public TowerScriptableObject towerInput;
 
     public void Awake()
     {

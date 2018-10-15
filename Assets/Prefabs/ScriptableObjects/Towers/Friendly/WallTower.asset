@@ -8,11 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 21766dc079240ce40bf17ae11ba36bdd, type: 3}
   m_Name: WallTower
-  m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
+  m_EditorClassIdentifier: 
   towerName: Wall
   description: 
-  buildCost: 40
+  buildCost: 50
   image: {fileID: 0}
   tower: {fileID: 1672556469931002, guid: d7df44aa07c68224abc430ba1726d3c3, type: 2}

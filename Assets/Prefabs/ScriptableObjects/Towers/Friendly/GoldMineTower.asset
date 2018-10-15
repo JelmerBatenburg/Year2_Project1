@@ -8,11 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 21766dc079240ce40bf17ae11ba36bdd, type: 3}
   m_Name: GoldMineTower
-  m_EditorClassIdentifier: Assembly-CSharp::TowerScriptObject
-  towerName: Gold Excevator
-  description: Gives money
-  buildCost: 750
+  m_EditorClassIdentifier: 
+  towerName: Gold Excavator
+  description: 
+  buildCost: 0
   image: {fileID: 0}
   tower: {fileID: 1690412428431432, guid: dc9f10675591d2642b18b120fa62cd3c, type: 2}

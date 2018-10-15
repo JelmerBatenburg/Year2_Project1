@@ -13,12 +13,19 @@ public class MeteorTowerPin : MonoBehaviour {
     public void Start()
     {
         StartCoroutine(TurnOnCollision());
+        StartCoroutine(Stop());
     }
 
     public IEnumerator TurnOnCollision()
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.1f);
         GetComponent<Collider>().isTrigger = false;
+    }
+
+    public IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(1.92f);
+        Check();
     }
 
     public void FixedUpdate()
@@ -27,10 +34,6 @@ public class MeteorTowerPin : MonoBehaviour {
         {
             transform.parent.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
             currentRotate += rotationSpeed * Time.deltaTime;
-        }
-        if(currentRotate > 90 && !stopRotate)
-        {
-            Check();
         }
     }
 

@@ -36,13 +36,13 @@ public class MeteorRain : BaseTower {
         tempEmpty.transform.LookAt(position);
         if (type == ShotType.pinshot)
         {
-            currentpin = Instantiate(pinShot, firePoint.position, firePoint.rotation,tempEmpty.transform);
+            currentpin = Instantiate(pinShot, transform.position, firePoint.rotation,tempEmpty.transform);
             currentpin.transform.Rotate(-90, 0, 0);
             currentpin.GetComponent<MeteorTowerPin>().tower = this;
         }
         else
         {
-            GameObject pin = Instantiate(laser, firePoint.position, firePoint.rotation, tempEmpty.transform);
+            GameObject pin = Instantiate(laser, transform.position, firePoint.rotation, tempEmpty.transform);
             Destroy(pin.transform.parent.gameObject, 2);
         }
 

@@ -171,6 +171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 90
+  damage: 100
+  damageRange: 3
+  explosion: {fileID: 1690321699841918, guid: 6f210023f2f8f424f8fc352dd6689cd4, type: 2}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!135 &135731017428480434
 SphereCollider:
   m_ObjectHideFlags: 1
