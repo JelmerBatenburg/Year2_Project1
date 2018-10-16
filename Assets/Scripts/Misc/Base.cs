@@ -10,7 +10,7 @@ public class Base : MonoBehaviour {
     public Transform entrance;
 
     public float spawnSpeed, waveSpeed;
-    public int unitsPerWave, unitsAddedWave, currentWave;
+    public int unitsPerWave, unitsAddedWave, currentWave, maxWaves;
     [Range(1,100)]
     public int rangePercentage, shieldPercentage;
     private bool sendingOut;
@@ -43,14 +43,17 @@ public class Base : MonoBehaviour {
         newWaveManager.SetTrigger("NewWave");
         sendingOut = true;
         currentWave++;
-        waveInput.text = currentWave.ToString();
-        for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
+        if(currentWave < maxWaves)
         {
-            int percentage = Random.Range(1, 100);
-            Instantiate((percentage < 100 - rangePercentage - shieldPercentage) ? soldier : (percentage < 100 - rangePercentage) ? shieldman : ranged, entrance.position, entrance.rotation);
-            yield return new WaitForSeconds(spawnSpeed);
+            waveInput.text = currentWave.ToString() + " / " + maxWaves.ToString();
+            for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
+            {
+                int percentage = Random.Range(1, 100);
+                Instantiate((percentage < 100 - rangePercentage - shieldPercentage) ? soldier : (percentage < 100 - rangePercentage) ? shieldman : ranged, entrance.position, entrance.rotation);
+                yield return new WaitForSeconds(spawnSpeed);
+            }
+            yield return new WaitForSeconds(waveSpeed);
+            sendingOut = false;
         }
-        yield return new WaitForSeconds(waveSpeed);
-        sendingOut = false;
     }
 }

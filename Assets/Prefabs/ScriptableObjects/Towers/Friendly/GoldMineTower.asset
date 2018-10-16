@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Gold Excavator
   description: 
-  buildCost: 0
+  buildCost: 120
   image: {fileID: 0}
   tower: {fileID: 1690412428431432, guid: dc9f10675591d2642b18b120fa62cd3c, type: 2}

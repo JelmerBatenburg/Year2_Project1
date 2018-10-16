@@ -411,7 +411,7 @@ MonoBehaviour:
   firePoint: {fileID: 4591825034374878}
   rotationPoint: {fileID: 4035616481511480}
   fireDelay: 3
-  shortDistance: 10
+  shortDistance: 12
   currentpin: {fileID: 0}
 --- !u!137 &137843339111733846
 SkinnedMeshRenderer:
