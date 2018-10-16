@@ -15,6 +15,11 @@ public class TowerInfoUi : MonoBehaviour {
     {
         if (active)
         {
+            if (!selectedTower)
+            {
+                uiShow.SetActive(false);
+                active = false;
+            }
             transform.LookAt(Camera.main.transform.position);
             transform.Rotate(0, 180, 0);
         }
