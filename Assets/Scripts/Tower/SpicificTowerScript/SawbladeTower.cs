@@ -18,6 +18,7 @@ public class SawbladeTower : BaseTower {
     {
         if (placed)
         {
+            CheckIfAttacked();
             InfoPopUp();
             GameObject enemy = TargetDetect(rotationPoint.position, false);
             if (enemy)

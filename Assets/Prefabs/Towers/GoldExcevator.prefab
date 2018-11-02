@@ -224,6 +224,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   range: {fileID: 1008877289343764}
+  warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
+  currentWarning: {fileID: 0}
   moneyGain: 25
   moneyGainTime: 4
   currency: {fileID: 0}

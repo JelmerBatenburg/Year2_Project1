@@ -369,7 +369,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958477981142684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.531277, y: -0.08885574, z: 144.13779}
+  m_LocalPosition: {x: -45.975555, y: -0.088853836, z: 128.34851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4007395083839558}
@@ -681,6 +681,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23351
   range: {fileID: 1932127842684216}
+  warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
+  currentWarning: {fileID: 0}
   bolt: {fileID: 114331497905083956}
   boltSpeed: 80
   RotatingPart: {fileID: 4334916882102676}
@@ -716,7 +718,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5ce7ab434a301e845accb050d93effc6, type: 2}
+  - {fileID: 2100000, guid: 7c03f85d2ca7a2b41b142af9c475f0a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

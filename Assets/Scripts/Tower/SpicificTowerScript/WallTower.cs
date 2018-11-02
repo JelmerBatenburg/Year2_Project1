@@ -7,12 +7,18 @@ public class WallTower : BaseTower {
     public LayerMask wallmask;
     public List<GameObject> walls;
     public GameObject wall;
+    public bool update;
 
     private void Update()
     {
+        if (update)
+        {
+            CheckIfAttacked();
+        }
         InfoPopUp();
         if (placed)
         {
+            update = true;
             Collider[] NearbyTowers = Physics.OverlapSphere(transform.position,6,wallmask);
             if(NearbyTowers.Length > 0)
             {

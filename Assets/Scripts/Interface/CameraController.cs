@@ -13,6 +13,12 @@ public class CameraController : MonoBehaviour {
     public float cameraUpRotation;
     public float camspeed;
     public float camRotationSpeed;
+    public Texture2D cursorImage;
+
+    public void Start()
+    {
+        Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.Auto);
+    }
 
     public void Update()
     {

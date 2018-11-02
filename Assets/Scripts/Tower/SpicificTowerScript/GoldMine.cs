@@ -13,6 +13,7 @@ public class GoldMine : BaseTower {
         InfoPopUp();
         if (placed)
         {
+            CheckIfAttacked();
             currency = GameObject.FindWithTag("Manager").GetComponent<IngameCurrency>();
             StartCoroutine(MoneyGainTimer());
             placed = false;

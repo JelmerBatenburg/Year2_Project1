@@ -21,6 +21,7 @@ public class MeteorRain : BaseTower {
     {
         if (placed)
         {
+            CheckIfAttacked();
             InfoPopUp();
             GameObject enemy = TargetDetect(transform.position, false);
             if (enemy && Vector3.Distance(transform.position,enemy.transform.position) > shortDistance)

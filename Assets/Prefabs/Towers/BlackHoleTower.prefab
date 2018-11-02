@@ -2544,6 +2544,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23351
   range: {fileID: 1743159141276674}
+  warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
+  currentWarning: {fileID: 0}
   chargeTime: 2
   blackHole: {fileID: 1225868243769472, guid: 087071e31b475674bb4ad7db32f22313, type: 2}
   rotationPart1: {fileID: 4164809912883086}

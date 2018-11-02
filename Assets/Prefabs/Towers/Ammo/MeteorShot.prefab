@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4292533646220324}
   - component: {fileID: 33104953835943044}
-  - component: {fileID: 23029715448711350}
-  - component: {fileID: 114433014238598980}
   - component: {fileID: 54012300771143146}
   - component: {fileID: 136404911706532358}
+  - component: {fileID: 114980688030426224}
   m_Layer: 0
   m_Name: MeteorShot
   m_TagString: Untagged
@@ -31,6 +30,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1668375378482832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4617904515879338}
+  - component: {fileID: 23018372911709474}
+  - component: {fileID: 33232119532355844}
+  m_Layer: 0
+  m_Name: Platform.001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &4292533646220324
 Transform:
   m_ObjectHideFlags: 1
@@ -38,18 +54,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362172993120262}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -12.103361, y: 0.0043029785, z: 47.55925}
+  m_LocalPosition: {x: -39.146915, y: -0.08885956, z: 178.78311}
   m_LocalScale: {x: 0.14145763, y: 0.14145757, z: 0.14145757}
-  m_Children: []
+  m_Children:
+  - {fileID: 4617904515879338}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23029715448711350
+--- !u!4 &4617904515879338
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668375378482832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 39.82, z: -15.79}
+  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_Children: []
+  m_Father: {fileID: 4292533646220324}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23018372911709474
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1362172993120262}
+  m_GameObject: {fileID: 1668375378482832}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: 76ddc67fc5d6a284b9e1d8ef79427c38, type: 3}
+  - {fileID: 2100000, guid: f00022d1381010a459567a904faa2d1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,6 +116,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362172993120262}
   m_Mesh: {fileID: 4300002, guid: 76ddc67fc5d6a284b9e1d8ef79427c38, type: 3}
+--- !u!33 &33232119532355844
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668375378482832}
+  m_Mesh: {fileID: 4300000, guid: 76ddc67fc5d6a284b9e1d8ef79427c38, type: 3}
 --- !u!54 &54012300771143146
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -101,7 +138,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114433014238598980
+--- !u!114 &114980688030426224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +152,7 @@ MonoBehaviour:
   rotationSpeed: 90
   tower: {fileID: 0}
   stopRotate: 0
-  impactRange: 8
+  impactRange: 10
   currentRotate: 0
 --- !u!136 &136404911706532358
 CapsuleCollider:

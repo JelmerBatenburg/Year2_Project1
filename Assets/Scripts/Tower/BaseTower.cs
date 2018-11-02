@@ -8,11 +8,38 @@ public class BaseTower : MonoBehaviour {
     public bool placed;
     public TowerScriptableObject towerInfo;
     public LayerMask targetMask, raycastmask;
-    public GameObject range;
+    public GameObject range, warning, currentWarning;
 
     public void SetRange()
     {
         range.transform.localScale = Vector3.one * radius * 2;
+    }
+
+    public void CheckIfAttacked()
+    {
+        if (currentWarning)
+        {
+            Collider[] enemies = Physics.OverlapSphere(transform.position, 40, targetMask);
+            if(enemies.Length != 0)
+            {
+                bool b = true;
+                foreach(Collider enemie in enemies)
+                {
+                    if(enemie.GetComponent<BaseUnit>().currentTarget == gameObject)
+                    {
+                        b = false;
+                    }
+                }
+                if (!b)
+                {
+                    Destroy(currentWarning);
+                }
+            }
+            else
+            {
+                Destroy(currentWarning);
+            }
+        }
     }
 
     public GameObject TargetDetect(Vector3 position, bool raycast)
@@ -85,6 +112,10 @@ public class BaseTower : MonoBehaviour {
 
     public virtual void HealthCheck()
     {
+        if (!currentWarning)
+        {
+            currentWarning = Instantiate(warning, transform.position + Vector3.up * 20, Quaternion.identity, transform);
+        }
         if (health <= 0)
         {
             TowerGrid grid = GameObject.FindWithTag("TowerManager").GetComponent<TowerGrid>();

@@ -21,6 +21,7 @@ public class HeavyCrossbowTower : BaseTower {
     {
         if (placed)
         {
+            CheckIfAttacked();
             InfoPopUp();
             GameObject enemy = TargetDetect(RotatingPart.position + Vector3.up * 1.5f, true);
             if (enemy)

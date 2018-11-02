@@ -19,6 +19,7 @@ public class NailgunTower : BaseTower {
     {
         if (placed)
         {
+            CheckIfAttacked();
             InfoPopUp();
             GameObject enemy = TargetDetect(rotatingPart.position, true);
             if (enemy)

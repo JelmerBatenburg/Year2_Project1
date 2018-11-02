@@ -20,6 +20,7 @@ public class BlackholeTower : BaseTower {
     {
         if (placed)
         {
+            CheckIfAttacked();
             InfoPopUp();
             GameObject enemy = TargetDetect(firepoint.position, true);
             if (enemy)

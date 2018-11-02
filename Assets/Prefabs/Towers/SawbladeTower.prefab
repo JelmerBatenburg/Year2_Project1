@@ -737,6 +737,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   range: {fileID: 1480836912439850}
+  warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
+  currentWarning: {fileID: 0}
   rotationPoint: {fileID: 4835587311879738}
   activeFire: 0
   sawblade: {fileID: 1717709831519324, guid: 1fade7972c2627d47ade073ae9bb992f, type: 2}

@@ -20,8 +20,8 @@ public class TowerInfoUi : MonoBehaviour {
                 uiShow.SetActive(false);
                 active = false;
             }
-            transform.LookAt(Camera.main.transform.position);
-            transform.Rotate(0, 180, 0);
+            //transform.LookAt(Camera.main.transform.position);
+            //transform.Rotate(0, 180, 0);
         }
     }
 
@@ -32,7 +32,7 @@ public class TowerInfoUi : MonoBehaviour {
             selectedTower.GetComponent<BaseTower>().range.SetActive(false);
         }
         selectedTower = tower;
-        transform.position = tower.transform.position + Vector3.up * 20;
+        //transform.position = tower.transform.position + Vector3.up * 20;
         uiShow.SetActive(true);
         nameInput.text = selectedTower.GetComponent<BaseTower>().towerInfo.name;
         descriptionInput.text = selectedTower.GetComponent<BaseTower>().towerInfo.description;

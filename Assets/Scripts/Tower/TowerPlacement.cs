@@ -9,11 +9,14 @@ public class TowerPlacement : MonoBehaviour {
     public bool active;
     public bool found;
     public int cost;
+    public GameObject towerPlacementInfo;
 
     public void Update()
     {
         if (active)
         {
+            towerPlacementInfo.SetActive(true);
+            towerPlacementInfo.transform.position = Input.mousePosition;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(ray, out hit))
@@ -43,6 +46,7 @@ public class TowerPlacement : MonoBehaviour {
 
                 if (Input.GetButtonDown("Fire1") && found)
                 {
+                    towerPlacementInfo.SetActive(false);
                     IngameCurrency currency = GameObject.FindWithTag("Manager").GetComponent<IngameCurrency>();
                     currency.currency -= tower.GetComponent<BaseTower>().towerInfo.buildCost;
                     tower.GetComponent<Collider>().enabled = true;
@@ -64,6 +68,7 @@ public class TowerPlacement : MonoBehaviour {
                 }
                 if (Input.GetButtonDown("Fire2"))
                 {
+                    towerPlacementInfo.SetActive(false);
                     active = false;
                     found = false;
                     Destroy(tower);

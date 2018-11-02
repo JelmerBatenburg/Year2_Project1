@@ -9,15 +9,17 @@ public class TowerSelect : MonoBehaviour {
 
     public void Open()
     {
-        animator.SetBool("Open", true);
-        close.SetActive(true);
-        open.SetActive(false);
-    }
-
-    public void Close()
-    {
-        animator.SetBool("Open", false);
-        close.SetActive(false);
-        open.SetActive(true);
+        if (open.activeInHierarchy)
+        {
+            animator.SetBool("Open", true);
+            close.SetActive(true);
+            open.SetActive(false);
+        }
+        else
+        {
+            animator.SetBool("Open", false);
+            close.SetActive(false);
+            open.SetActive(true);
+        }
     }
 }

@@ -224,11 +224,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   range: {fileID: 1178144341068292}
+  warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
+  currentWarning: {fileID: 0}
   wallmask:
     serializedVersion: 2
     m_Bits: 2048
   walls: []
   wall: {fileID: 1396795445366048, guid: fe1fe1320da086f498cea2ca80fb2c4e, type: 2}
+  update: 0
 --- !u!208 &208148251963518170
 NavMeshObstacle:
   m_ObjectHideFlags: 1

@@ -14,6 +14,11 @@ public class RangedUnit : BaseUnit {
 
     public void Update()
     {
+        if (!currentTarget)
+        {
+
+            animationController.SetBool("Attacking", false);
+        }
         TargetDetection();
         Attack();
         Move();
@@ -24,7 +29,6 @@ public class RangedUnit : BaseUnit {
         animationController.SetBool("Attacking", true);
         attacking = true;
         yield return new WaitForEndOfFrame();
-        animationController.SetBool("Attacking", false);
         GameObject g = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Destroy(g.gameObject, 2);
         if (currentTarget)

@@ -1537,6 +1537,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23351
   range: {fileID: 1867884050400028}
+  warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
+  currentWarning: {fileID: 0}
   rotatingPart: {fileID: 4544594361895370}
   rotatingPart2: {fileID: 4141241529207294}
   fireLocation: {fileID: 4665111268706750}
