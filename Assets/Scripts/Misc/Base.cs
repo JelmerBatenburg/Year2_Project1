@@ -19,6 +19,7 @@ public class Base : MonoBehaviour {
     public Text waveInput, aliveInput;
     public Image healthInput;
     public List<GameObject> currentUnits;
+    public GameObject endScreen;
         
     public void Update()
     {
@@ -64,7 +65,7 @@ public class Base : MonoBehaviour {
         newWaveManager.SetTrigger("NewWave");
         sendingOut = true;
         currentWave++;
-        if(currentWave < maxWaves)
+        if(currentWave == maxWaves)
         {
             waveInput.text = currentWave.ToString() + " / " + maxWaves.ToString();
             for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
@@ -76,6 +77,11 @@ public class Base : MonoBehaviour {
             }
             yield return new WaitForSeconds(waveSpeed);
             sendingOut = false;
+        }
+        else
+        {
+            endScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
