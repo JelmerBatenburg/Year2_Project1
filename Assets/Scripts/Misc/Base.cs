@@ -65,7 +65,7 @@ public class Base : MonoBehaviour {
         newWaveManager.SetTrigger("NewWave");
         sendingOut = true;
         currentWave++;
-        if(currentWave == maxWaves)
+        if(currentWave <= maxWaves)
         {
             waveInput.text = currentWave.ToString() + " / " + maxWaves.ToString();
             for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
@@ -78,7 +78,7 @@ public class Base : MonoBehaviour {
             yield return new WaitForSeconds(waveSpeed);
             sendingOut = false;
         }
-        else
+        else if(currentWave > maxWaves)
         {
             endScreen.SetActive(true);
             Time.timeScale = 0;

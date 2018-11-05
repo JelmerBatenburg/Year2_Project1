@@ -24,7 +24,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1927359796580692
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4066051358125516
 Transform:
@@ -158,6 +158,7 @@ MonoBehaviour:
   aliveInput: {fileID: 0}
   healthInput: {fileID: 0}
   currentUnits: []
+  endScreen: {fileID: 0}
 --- !u!114 &114657152942877696
 MonoBehaviour:
   m_ObjectHideFlags: 1
