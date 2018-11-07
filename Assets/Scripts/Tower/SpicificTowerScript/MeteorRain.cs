@@ -50,6 +50,7 @@ public class MeteorRain : BaseTower {
         }
         else
         {
+            source.PlayOneShot(FireSound, 2);
             GameObject pin = Instantiate(laser, transform.position, firePoint.rotation, tempEmpty.transform);
             Destroy(pin.transform.parent.gameObject, 2);
         }

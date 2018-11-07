@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class Base : MonoBehaviour {
 
@@ -20,7 +21,19 @@ public class Base : MonoBehaviour {
     public Image healthInput;
     public List<GameObject> currentUnits;
     public GameObject endScreen;
-        
+    public Animator waveBar;
+    public Text nextWaveUnits;
+    public bool endless;
+
+    public void Start()
+    {
+        if (!friendly)
+        {
+            endless = GameObject.FindWithTag("Finish").GetComponent<GameModeType>().endless;
+            Destroy(GameObject.FindWithTag("Finish"));
+        }
+    }
+
     public void Update()
     {
         if (!friendly && !sendingOut)
@@ -63,11 +76,29 @@ public class Base : MonoBehaviour {
     public IEnumerator SendOutUnits()
     {
         newWaveManager.SetTrigger("NewWave");
+        waveBar.SetFloat("Speed", 1 / (waveSpeed + (spawnSpeed * (unitsPerWave + unitsAddedWave * currentWave))));
         sendingOut = true;
         currentWave++;
-        if(currentWave <= maxWaves)
+        if(currentWave <= maxWaves && !endless)
         {
+            waveBar.SetTrigger("Trigger");
             waveInput.text = currentWave.ToString() + " / " + maxWaves.ToString();
+            nextWaveUnits.text = (unitsPerWave + unitsAddedWave * (currentWave + 1)).ToString();
+            for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
+            {
+                int percentage = Random.Range(1, 100);
+                GameObject g = Instantiate((percentage < 100 - rangePercentage - shieldPercentage) ? soldier : (percentage < 100 - rangePercentage) ? shieldman : ranged, entrance.position, entrance.rotation);
+                currentUnits.Add(g);
+                yield return new WaitForSeconds(spawnSpeed);
+            }
+            yield return new WaitForSeconds(waveSpeed);
+            sendingOut = false;
+        }
+        else if (endless)
+        {
+            waveBar.SetTrigger("Trigger");
+            waveInput.text = currentWave.ToString();
+            nextWaveUnits.text = (unitsPerWave + unitsAddedWave * (currentWave + 1)).ToString();
             for (int i = 0; i < unitsPerWave + unitsAddedWave * currentWave; i++)
             {
                 int percentage = Random.Range(1, 100);

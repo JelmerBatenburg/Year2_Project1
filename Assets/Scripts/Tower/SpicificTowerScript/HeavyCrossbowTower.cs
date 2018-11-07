@@ -41,6 +41,7 @@ public class HeavyCrossbowTower : BaseTower {
         activeFire = true;
         Destroy(bolt.gameObject, 5);
         bolt.transform.parent = null;
+        source.PlayOneShot(FireSound,2);
         bolt.speed = boltSpeed;
         yield return new WaitForSeconds(fireRate);
         GameObject tempBolt = Instantiate(boltPrefab, reloadLocation.position, reloadLocation.rotation, reloadLocation);

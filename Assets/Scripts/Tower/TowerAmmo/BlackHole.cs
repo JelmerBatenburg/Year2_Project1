@@ -8,6 +8,8 @@ public class BlackHole : MonoBehaviour {
     public float speed;
     public int scale;
     public int damage;
+    public AudioSource source;
+    public AudioClip sound;
 
     public void Update()
     {
@@ -32,6 +34,7 @@ public class BlackHole : MonoBehaviour {
 
     public IEnumerator Implose(float time)
     {
+        source.PlayOneShot(sound, 3);
         scale = 1;
         GetComponent<Rigidbody>().isKinematic = true;
         yield return new WaitForSeconds(time);

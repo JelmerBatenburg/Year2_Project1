@@ -15,6 +15,8 @@ public class BaseUnit : MonoBehaviour {
     public int damage;
     public bool attacking, stopWalking;
     public Animator animationController;
+    public AudioClip attack;
+    public AudioSource source;
 
     public void Move()
     {
@@ -109,7 +111,7 @@ public class BaseUnit : MonoBehaviour {
         animationController.SetBool("Attacking", false);
         if (currentTarget)
         {
-            
+            source.PlayOneShot(attack, 0.2f);
             if (currentTarget.parent.GetComponent<Base>())
             {
                 currentTarget.parent.GetComponent<Base>().health -= damage;

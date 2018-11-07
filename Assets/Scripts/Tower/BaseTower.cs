@@ -9,6 +9,8 @@ public class BaseTower : MonoBehaviour {
     public TowerScriptableObject towerInfo;
     public LayerMask targetMask, raycastmask;
     public GameObject range, warning, currentWarning;
+    public AudioSource source;
+    public AudioClip FireSound;
 
     public void SetRange()
     {

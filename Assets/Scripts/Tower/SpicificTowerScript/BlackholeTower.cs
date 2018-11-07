@@ -38,6 +38,7 @@ public class BlackholeTower : BaseTower {
 
     public IEnumerator Fire()
     {
+        source.PlayOneShot(FireSound, 3);
         GameObject hole = Instantiate(blackHole, firepoint.position, firepoint.rotation);
         hole.GetComponent<BlackHole>().damage = Mathf.RoundToInt(damage);
         Destroy(hole, 5);

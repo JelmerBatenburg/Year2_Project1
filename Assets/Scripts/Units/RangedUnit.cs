@@ -29,6 +29,7 @@ public class RangedUnit : BaseUnit {
         animationController.SetBool("Attacking", true);
         attacking = true;
         yield return new WaitForEndOfFrame();
+        source.PlayOneShot(attack);
         GameObject g = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Destroy(g.gameObject, 2);
         if (currentTarget)
@@ -42,7 +43,7 @@ public class RangedUnit : BaseUnit {
         RangedProjectile p = g.GetComponent<RangedProjectile>();
         p.damage = damage;
         p.target = currentTarget;
-        yield return new WaitForSeconds(attackSpeed);
+        yield return new WaitForSeconds(attackSpeed + Random.Range(0.1f,-0.1f));
         attacking = false;
     }
 }

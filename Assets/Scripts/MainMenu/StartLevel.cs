@@ -9,7 +9,7 @@ public class StartLevel : MonoBehaviour {
     public Text nameInput, waveInput, amountInput;
     public Image spriteInput;
     public string currentSelectedLevel;
-    public GameObject loadScene;
+    public GameObject loadScene, gameType;
 
     public void SetInfo(string level, int name, int waves, Sprite image, int difficulity,int startingAmount)
     {
@@ -26,6 +26,8 @@ public class StartLevel : MonoBehaviour {
         {
             GameObject info = Instantiate(loadScene, Vector3.zero, Quaternion.identity);
             info.GetComponent<LevelLoadInfo>().sceneName = currentSelectedLevel;
+            GameObject type = Instantiate(gameType, Vector3.zero, Quaternion.identity);
+            type.GetComponent<GameModeType>().endless = false;
 
             SceneManager.LoadScene("LoadScene");
         }
