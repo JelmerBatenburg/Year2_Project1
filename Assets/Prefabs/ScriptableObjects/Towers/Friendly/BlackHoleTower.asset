@@ -14,5 +14,5 @@ MonoBehaviour:
   towerName: BlackHoleTower
   description: 
   buildCost: 1200
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: b4222ca454a6a1a4ebd8c3e9b03b426a, type: 3}
   tower: {fileID: 1068228478072018, guid: 4f7984f16a44d07478a786df11c5113f, type: 2}

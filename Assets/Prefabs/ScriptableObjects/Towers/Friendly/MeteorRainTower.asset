@@ -14,5 +14,5 @@ MonoBehaviour:
   towerName: MeteorRainTower
   description: 
   buildCost: 1200
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: d99bf00c95ec01d42ba4e1d0593b204a, type: 3}
   tower: {fileID: 1740584672517432, guid: ace0c81a91b406f41abec889ad8c2ce2, type: 2}

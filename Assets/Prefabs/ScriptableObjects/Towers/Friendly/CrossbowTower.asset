@@ -14,5 +14,5 @@ MonoBehaviour:
   towerName: HeavyCrossbowTower
   description: 
   buildCost: 250
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 10e077a8a04f06649b617206e5bf6424, type: 3}
   tower: {fileID: 1958477981142684, guid: 7f7d6c30a9ae23741b9a63bfc162cc2d, type: 2}

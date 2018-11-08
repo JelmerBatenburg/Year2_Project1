@@ -14,5 +14,5 @@ MonoBehaviour:
   towerName: Wall
   description: 
   buildCost: 50
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 1cd3824bbade62a499c3ea93af3c08ed, type: 3}
   tower: {fileID: 1672556469931002, guid: d7df44aa07c68224abc430ba1726d3c3, type: 2}

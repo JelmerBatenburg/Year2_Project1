@@ -24,7 +24,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1672556469931002
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1777667992380512
 GameObject:
@@ -61,7 +61,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4062523104928056
 Transform:
@@ -83,8 +83,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672556469931002}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -25.27338, y: -0.088861465, z: 203.66656}
-  m_LocalScale: {x: 1, y: 1, z: 0.73365}
+  m_LocalPosition: {x: 207.55836, y: 54.620594, z: 28.101812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4877803864871296}
   m_Father: {fileID: 0}
@@ -154,7 +154,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 924c59bd8ca5e734fb245226ce4be0a7, type: 3}
+  - {fileID: 2100000, guid: 3941072747078dc43b126186fb23782c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -180,7 +180,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672556469931002}
-  m_Mesh: {fileID: 4300002, guid: 924c59bd8ca5e734fb245226ce4be0a7, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d42a6e60e30fa7d40a837c62141bb996, type: 3}
 --- !u!33 &33694046812180386
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -243,7 +243,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 4.5, y: 4.5, z: 4.5}
+  m_Extents: {x: 4, y: 4, z: 4.5}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1

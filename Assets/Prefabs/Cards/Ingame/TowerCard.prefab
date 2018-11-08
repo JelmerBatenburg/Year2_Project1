@@ -311,7 +311,7 @@ MonoBehaviour:
   nameInput: {fileID: 114565337824258666}
   descriptionInput: {fileID: 0}
   costInput: {fileID: 114156780759272512}
-  spriteInput: {fileID: 0}
+  spriteInput: {fileID: 114717041031542360}
   towerInput: {fileID: 11400000, guid: 6f9bc37754601fa48aa5bec04705cc4b, type: 2}
 --- !u!222 &222004147370859934
 CanvasRenderer:
