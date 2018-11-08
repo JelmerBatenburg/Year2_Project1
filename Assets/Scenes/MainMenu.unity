@@ -2716,7 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfacbdab536361428781809821af32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
+  sceneName: Level1
   levelNumber: 1
   waves: 30
   startingAmount: 2000
