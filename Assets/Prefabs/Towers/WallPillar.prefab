@@ -24,7 +24,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!1 &1672556469931002
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!1 &1777667992380512
 GameObject:
@@ -61,7 +61,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &4062523104928056
 Transform:
@@ -226,6 +226,8 @@ MonoBehaviour:
   range: {fileID: 1178144341068292}
   warning: {fileID: 1801853052633438, guid: 93fc908806d69ad409fab9ca28aa88cf, type: 2}
   currentWarning: {fileID: 0}
+  source: {fileID: 0}
+  FireSound: {fileID: 0}
   wallmask:
     serializedVersion: 2
     m_Bits: 2048
