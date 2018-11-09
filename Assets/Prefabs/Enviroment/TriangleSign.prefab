@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4110576562690122}
   - component: {fileID: 33373575654353618}
   - component: {fileID: 23033410915552080}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: TriangleSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}

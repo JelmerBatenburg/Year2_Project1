@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4943496519824366}
   - component: {fileID: 33710330143715570}
   - component: {fileID: 23755848067560070}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: CrashBarrierCurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}

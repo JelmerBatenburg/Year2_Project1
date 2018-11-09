@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.024796424, g: 0.033247992, b: 0.003861239, a: 1}
+  m_IndirectSpecularColor: {r: 0.106853545, g: 0.037698634, b: 0.020775741, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3317,7 +3317,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64295
+    m_Bits: 56103
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 0276372a09a1bd94e9784e6eb7be2279, type: 2}
   m_TargetDisplay: 0

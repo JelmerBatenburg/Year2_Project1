@@ -39,13 +39,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.024796424, g: 0.033247992, b: 0.003861239, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -114,7 +114,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: c2bdde938915eda48b9807fc531b33d5, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8c288bab3d108d149827ce91a6e7224c, type: 2}
 --- !u!1 &1523098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,7 +2311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9cc76d2be1a4a4ab933cb25a6243ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenLevelName: Level1
+  currenLevelName: Level2
   mainMenuName: MainMenu
   enemyBase: {fileID: 1656796497}
   gameModeType: {fileID: 1253252312639302, guid: 4a1c9a9169185d449a41a424389186c1,
@@ -3607,7 +3607,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!154 &108410823
 TerrainCollider:
@@ -10196,7 +10196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9cc76d2be1a4a4ab933cb25a6243ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenLevelName: Level1
+  currenLevelName: Level2
   mainMenuName: MainMenu
   enemyBase: {fileID: 1656796497}
   gameModeType: {fileID: 1253252312639302, guid: 4a1c9a9169185d449a41a424389186c1,
@@ -23769,7 +23769,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64295
+    m_Bits: 56103
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 0276372a09a1bd94e9784e6eb7be2279, type: 2}
   m_TargetDisplay: 0
@@ -36904,15 +36904,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 898339678}
-  m_LocalRotation: {x: -0.70710677, y: -0.00020257385, z: -0.00020279037, w: 0.7071068}
-  m_LocalPosition: {x: 209.27567, y: 54.121, z: 163.7}
+  m_LocalRotation: {x: -0.00020269836, y: 0.7071068, z: 0.7071067, w: 0.00020292398}
+  m_LocalPosition: {x: 209.28151, y: 54.121, z: 158.62135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1657192313}
   - {fileID: 510497820}
   m_Father: {fileID: 1212090413}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -0.033}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 179.96701}
 --- !u!1 &900534782
 GameObject:
   m_ObjectHideFlags: 0
@@ -75080,7 +75080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9cc76d2be1a4a4ab933cb25a6243ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenLevelName: Level1
+  currenLevelName: Level2
   mainMenuName: MainMenu
   enemyBase: {fileID: 1656796497}
   gameModeType: {fileID: 1253252312639302, guid: 4a1c9a9169185d449a41a424389186c1,

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4233654146582658}
   - component: {fileID: 33148393723558916}
   - component: {fileID: 23275032256513244}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: RotatedSquareSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}

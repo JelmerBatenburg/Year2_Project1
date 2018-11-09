@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4908330086864146}
   - component: {fileID: 33668427548228450}
   - component: {fileID: 23540473476504626}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: CrashBarrierStreight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

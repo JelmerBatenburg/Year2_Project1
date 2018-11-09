@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4283698035652640}
   - component: {fileID: 33850850872095526}
   - component: {fileID: 23613746899964050}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: LooseTire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

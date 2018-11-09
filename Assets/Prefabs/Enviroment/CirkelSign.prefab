@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4850095518509962}
   - component: {fileID: 33093931232269462}
   - component: {fileID: 23469615422166858}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: CirkelSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}

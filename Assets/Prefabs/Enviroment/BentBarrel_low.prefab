@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4081647435861222}
   - component: {fileID: 33564652645230076}
   - component: {fileID: 23974359600740030}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: BentBarrel_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}

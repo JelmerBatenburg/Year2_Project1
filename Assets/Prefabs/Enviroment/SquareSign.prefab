@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4751548250934006}
   - component: {fileID: 33360282935662870}
   - component: {fileID: 23381553561952700}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: SquareSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}

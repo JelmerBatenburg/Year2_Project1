@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4347325793378654}
   - component: {fileID: 33490360567294136}
   - component: {fileID: 23875376173538314}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: CementRoadblock_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
