@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 459167982}
   - component: {fileID: 459167981}
   - component: {fileID: 459167980}
+  - component: {fileID: 459167983}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1034,7 +1035,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 459167981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 459167983}
+        m_MethodName: OnButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &459167981
@@ -1071,6 +1083,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 459167978}
   m_CullTransparentMesh: 0
+--- !u!114 &459167983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459167978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9f1cdbd30ea9b408d797035b99363d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &488845364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,7 +2295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelInfo: {fileID: 1446003768779586, guid: 0414333fe4410874db7f7a566e1a67e4, type: 2}
   gameType: {fileID: 1253252312639302, guid: 4a1c9a9169185d449a41a424389186c1, type: 2}
-  levelName: SampleScene
+  levelName: Level1
 --- !u!1 &1399910909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2683,7 @@ MonoBehaviour:
   waves: 30
   startingAmount: 2000
   difficulty: 3
-  levelImage: {fileID: 21300000, guid: c13feb8ce98d472429fffb06c81c2221, type: 3}
+  levelImage: {fileID: 21300000, guid: 7523c7b86190bab4bbc79276a3ca4d79, type: 3}
 --- !u!114 &1539475788
 MonoBehaviour:
   m_ObjectHideFlags: 0

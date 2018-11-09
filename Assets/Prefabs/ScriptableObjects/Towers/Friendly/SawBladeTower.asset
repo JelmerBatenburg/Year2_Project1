@@ -14,5 +14,5 @@ MonoBehaviour:
   towerName: SawBladeTower
   description: 
   buildCost: 400
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: a1e5275d0573b96418533993103a3897, type: 3}
   tower: {fileID: 1793920454102252, guid: 335f3bbb76e378c40b2b5b8005ab821f, type: 2}
